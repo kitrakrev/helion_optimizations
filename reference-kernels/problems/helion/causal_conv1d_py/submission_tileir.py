@@ -1,7 +1,6 @@
-#!POPCORN leaderboard causal_conv1d
-#!POPCORN gpu B200_Nebius
+# Variant: TileIR backend (no ACF - TileIR doesn't support ptx_options)
+# Benchmark: python eval.py benchmark causal_conv1d_py/ (with submission_tileir as submission)
 
-# TileIR backend: ~33% faster on benchmarks 0,1 vs Triton+ACF. See submission_triton_acf.py for ACF variant.
 import os
 os.environ["ENABLE_TILE"] = "1"
 os.environ["HELION_BACKEND"] = "tileir"
@@ -13,6 +12,7 @@ import torch.nn.functional as F
 import helion
 import helion.language as hl
 
+# TileIR: no ACF support, use minimal configs
 SHAPE_CONFIGS: dict[tuple, helion.Config] = {
     (1, 64, 64, 4): helion.Config(block_sizes=[32, 16], num_warps=16, num_stages=3),
     (2, 128, 128, 4): helion.Config(block_sizes=[16, 16], num_warps=32, num_stages=1),
@@ -42,25 +42,11 @@ def _make_kernel(config: helion.Config):
         y = torch.empty(B, D, N, dtype=x_pad.dtype, device=x_pad.device)
         for rb, rd, rs in hl.tile([B, D, N], block_size=[1, None, None]):
             bi = rb.begin
-            w_row = w[rd, :].to(torch.float32)  # [rd, W]
-            if W == 4:
-                # hl.inline_triton (~20%): vectorized filter reduction for W=4
-                x0 = hl.load(x_pad, [bi, rd, rs.index + 0]).to(torch.float32)
-                x1 = hl.load(x_pad, [bi, rd, rs.index + 1]).to(torch.float32)
-                x2 = hl.load(x_pad, [bi, rd, rs.index + 2]).to(torch.float32)
-                x3 = hl.load(x_pad, [bi, rd, rs.index + 3]).to(torch.float32)
-                x_slice = torch.stack([x0, x1, x2, x3], dim=-1)  # [rd, rs, 4]
-                acc = hl.inline_triton(
-                    "tl.sum({x_slice} * {w_row}, axis=-1)",
-                    args={"x_slice": x_slice, "w_row": w_row[:, None, :]},
-                    output_like=hl.zeros([rd, rs], dtype=torch.float32),
-                )
-            else:
-                acc = hl.zeros([rd, rs], dtype=torch.float32)
-                for j in range(W):
-                    c = w[rd, j].to(torch.float32)
-                    x_val = hl.load(x_pad, [bi, rd, rs.index + j]).to(torch.float32)
-                    acc = acc + x_val * c[:, None]
+            acc = hl.zeros([rd, rs], dtype=torch.float32)
+            for j in range(W):
+                c = w[rd, j].to(torch.float32)
+                x_val = hl.load(x_pad, [bi, rd, rs.index + j]).to(torch.float32)
+                acc = acc + x_val * c[:, None]
             acc = acc + b[rd].to(torch.float32)[:, None]
             y[rb, rd, rs] = acc[None, :, :].to(y.dtype)
         return y

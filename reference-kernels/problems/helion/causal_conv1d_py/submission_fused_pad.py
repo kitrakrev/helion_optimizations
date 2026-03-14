@@ -1,7 +1,4 @@
-#!POPCORN leaderboard causal_conv1d
-#!POPCORN gpu B200_Nebius
-
-# TileIR backend: ~33% faster on benchmarks 0,1 vs Triton+ACF. See submission_triton_acf.py for ACF variant.
+# Fused padding variant - kernel accepts unpadded x
 import os
 os.environ["ENABLE_TILE"] = "1"
 os.environ["HELION_BACKEND"] = "tileir"
@@ -9,7 +6,6 @@ os.environ["HELION_BACKEND"] = "tileir"
 from task import input_t, output_t
 
 import torch
-import torch.nn.functional as F
 import helion
 import helion.language as hl
 
@@ -29,38 +25,21 @@ SHAPE_CONFIGS: dict[tuple, helion.Config] = {
 
 def _make_kernel(config: helion.Config):
     @helion.kernel(static_shapes=True, config=config)
-    def kernel(
-        x_pad: torch.Tensor,
-        w: torch.Tensor,
-        b: torch.Tensor,
-    ) -> torch.Tensor:
-        B = x_pad.size(0)
-        D = x_pad.size(1)
-        L = x_pad.size(2)
+    def kernel(x: torch.Tensor, w: torch.Tensor, b: torch.Tensor) -> torch.Tensor:
+        B, D, S = x.size(0), x.size(1), hl.specialize(x.size(2))
         W = hl.specialize(w.size(1))
-        N = L - W + 1
-        y = torch.empty(B, D, N, dtype=x_pad.dtype, device=x_pad.device)
+        N = S
+        y = torch.empty(B, D, N, dtype=x.dtype, device=x.device)
         for rb, rd, rs in hl.tile([B, D, N], block_size=[1, None, None]):
             bi = rb.begin
-            w_row = w[rd, :].to(torch.float32)  # [rd, W]
-            if W == 4:
-                # hl.inline_triton (~20%): vectorized filter reduction for W=4
-                x0 = hl.load(x_pad, [bi, rd, rs.index + 0]).to(torch.float32)
-                x1 = hl.load(x_pad, [bi, rd, rs.index + 1]).to(torch.float32)
-                x2 = hl.load(x_pad, [bi, rd, rs.index + 2]).to(torch.float32)
-                x3 = hl.load(x_pad, [bi, rd, rs.index + 3]).to(torch.float32)
-                x_slice = torch.stack([x0, x1, x2, x3], dim=-1)  # [rd, rs, 4]
-                acc = hl.inline_triton(
-                    "tl.sum({x_slice} * {w_row}, axis=-1)",
-                    args={"x_slice": x_slice, "w_row": w_row[:, None, :]},
-                    output_like=hl.zeros([rd, rs], dtype=torch.float32),
-                )
-            else:
-                acc = hl.zeros([rd, rs], dtype=torch.float32)
-                for j in range(W):
-                    c = w[rd, j].to(torch.float32)
-                    x_val = hl.load(x_pad, [bi, rd, rs.index + j]).to(torch.float32)
-                    acc = acc + x_val * c[:, None]
+            acc = hl.zeros([rd, rs], dtype=torch.float32)
+            for j in range(W):
+                c = w[rd, j].to(torch.float32)
+                idx = rs.index + j - (W - 1)
+                idx_safe = torch.maximum(idx, 0)
+                x_val = hl.load(x, [bi, rd, idx_safe]).to(torch.float32)
+                x_val = torch.where(idx >= 0, x_val, 0.0)
+                acc = acc + x_val * c[:, None]
             acc = acc + b[rd].to(torch.float32)[:, None]
             y[rb, rd, rs] = acc[None, :, :].to(y.dtype)
         return y
@@ -76,5 +55,4 @@ def custom_kernel(data: input_t) -> output_t:
     B, D, S = x.shape
     W = weight.shape[1]
     kernel = _KERNELS[(B, D, S, W)]
-    padded = F.pad(x, (W - 1, 0))
-    return kernel(padded, weight, bias)
+    return kernel(x, weight, bias)

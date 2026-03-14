@@ -2,6 +2,9 @@ import base64
 import dataclasses
 import multiprocessing
 import re
+import shutil
+import subprocess
+import tempfile
 import time
 import os
 import sys
@@ -446,22 +449,22 @@ def run_local():
     and benchmarks, prints results to stdout. No Popcorn infrastructure needed.
 
     Usage: python eval.py <mode> <problem_dir>
-      mode: test, benchmark, both, or profile
+      mode: test, benchmark, both, profile, or profile-nsight
       problem_dir: path to the problem directory containing task.yml
     """
     import yaml
 
     if len(sys.argv) < 3:
         print("Usage: python eval.py <mode> <problem_dir>", file=sys.stderr)
-        print("  mode: test, benchmark, both, or profile", file=sys.stderr)
+        print("  mode: test, benchmark, both, profile, or profile-nsight", file=sys.stderr)
         print("  problem_dir: path to problem directory containing task.yml", file=sys.stderr)
         return 1
 
     mode = sys.argv[1]
     problem_dir = Path(sys.argv[2])
 
-    if mode not in ("test", "benchmark", "both", "profile"):
-        print(f"Unknown mode '{mode}'. Use 'test', 'benchmark', 'both', or 'profile'.", file=sys.stderr)
+    if mode not in ("test", "benchmark", "both", "profile", "profile-nsight"):
+        print(f"Unknown mode '{mode}'. Use 'test', 'benchmark', 'both', 'profile', or 'profile-nsight'.", file=sys.stderr)
         return 1
 
     problem_dir = problem_dir.resolve()
@@ -528,6 +531,64 @@ def run_local():
             report = run_single_profile(bench)
             print(report)
             print()
+
+    # --- Nsight Compute profiling (ncu) ---
+    if mode == "profile-nsight":
+        ncu_path = shutil.which("ncu")
+        if not ncu_path:
+            print("Error: ncu (Nsight Compute) not found. Install CUDA toolkit.", file=sys.stderr)
+            return 1
+        profile_script = problem_dir / "profile_nsight.py"
+        if profile_script.exists():
+            out_file = problem_dir / f"{problem_dir.name}_profile.ncu-rep"
+            cmd = [ncu_path, "-o", str(out_file), "--set", "basic", sys.executable, str(profile_script)]
+            print(f"Running Nsight Compute: {' '.join(cmd)}", file=sys.stderr)
+            result = subprocess.run(cmd, cwd=str(problem_dir))
+            if result.returncode == 0:
+                print(f"Output: {out_file}", file=sys.stderr)
+            return result.returncode
+        # Generic runner when profile_nsight.py doesn't exist
+        benchmarks = task.get("benchmarks", [])
+        if not benchmarks:
+            print("No benchmarks in task.yml", file=sys.stderr)
+            return 1
+        bench = benchmarks[0]
+        runner = tempfile.NamedTemporaryFile(mode="w", suffix=".py", delete=False)
+        helion_dir = str(problem_dir.parent)
+        runner.write(f"""
+import sys
+sys.path.insert(0, {repr(helion_dir)})
+sys.path.insert(0, {repr(str(problem_dir))})
+import os
+os.chdir({repr(str(problem_dir))})
+import yaml
+task = yaml.safe_load(open({repr(str(problem_dir / "task.yml"))}))
+bench = task["benchmarks"][0]
+from submission import custom_kernel
+from reference import generate_input
+from utils import set_seed
+set_seed(42)
+data = generate_input(**bench)
+import torch
+torch.cuda.synchronize()
+for _ in range(5):
+    custom_kernel(data)
+torch.cuda.synchronize()
+custom_kernel(data)
+torch.cuda.synchronize()
+""")
+        runner.close()
+        out_file = problem_dir / f"{problem_dir.name}_profile.ncu-rep"
+        cmd = [ncu_path, "-o", str(out_file), "--set", "basic", sys.executable, runner.name]
+        print(f"Running Nsight Compute: {' '.join(cmd)}", file=sys.stderr)
+        result = subprocess.run(cmd)
+        try:
+            os.unlink(runner.name)
+        except OSError:
+            pass
+        if result.returncode == 0:
+            print(f"Output: {out_file}", file=sys.stderr)
+        return result.returncode
 
     return exit_code
 

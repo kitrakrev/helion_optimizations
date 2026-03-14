@@ -95,9 +95,14 @@ python eval.py both causal_conv1d_py/
 
 # Profile (generates PyTorch profiler trace)
 python eval.py profile causal_conv1d_py/
+
+# Profile with Nsight Compute (ncu) - detailed GPU metrics, outputs .ncu-rep
+python eval.py profile-nsight causal_conv1d_py/
 ```
 
 Replace `causal_conv1d_py/` with any problem directory.
+
+**Nsight Compute profiling**: `profile-nsight` runs `ncu` and produces a `.ncu-rep` file. View it in the Nsight Compute GUI or run `ncu --import <file>.ncu-rep --print-summary per-kernel` for a text summary. Requires CUDA toolkit.
 
 ## Writing a Helion Submission
 

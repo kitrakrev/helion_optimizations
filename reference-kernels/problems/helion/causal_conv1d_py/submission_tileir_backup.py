@@ -42,25 +42,11 @@ def _make_kernel(config: helion.Config):
         y = torch.empty(B, D, N, dtype=x_pad.dtype, device=x_pad.device)
         for rb, rd, rs in hl.tile([B, D, N], block_size=[1, None, None]):
             bi = rb.begin
-            w_row = w[rd, :].to(torch.float32)  # [rd, W]
-            if W == 4:
-                # hl.inline_triton (~20%): vectorized filter reduction for W=4
-                x0 = hl.load(x_pad, [bi, rd, rs.index + 0]).to(torch.float32)
-                x1 = hl.load(x_pad, [bi, rd, rs.index + 1]).to(torch.float32)
-                x2 = hl.load(x_pad, [bi, rd, rs.index + 2]).to(torch.float32)
-                x3 = hl.load(x_pad, [bi, rd, rs.index + 3]).to(torch.float32)
-                x_slice = torch.stack([x0, x1, x2, x3], dim=-1)  # [rd, rs, 4]
-                acc = hl.inline_triton(
-                    "tl.sum({x_slice} * {w_row}, axis=-1)",
-                    args={"x_slice": x_slice, "w_row": w_row[:, None, :]},
-                    output_like=hl.zeros([rd, rs], dtype=torch.float32),
-                )
-            else:
-                acc = hl.zeros([rd, rs], dtype=torch.float32)
-                for j in range(W):
-                    c = w[rd, j].to(torch.float32)
-                    x_val = hl.load(x_pad, [bi, rd, rs.index + j]).to(torch.float32)
-                    acc = acc + x_val * c[:, None]
+            acc = hl.zeros([rd, rs], dtype=torch.float32)
+            for j in range(W):
+                c = w[rd, j].to(torch.float32)
+                x_val = hl.load(x_pad, [bi, rd, rs.index + j]).to(torch.float32)
+                acc = acc + x_val * c[:, None]
             acc = acc + b[rd].to(torch.float32)[:, None]
             y[rb, rd, rs] = acc[None, :, :].to(y.dtype)
         return y
