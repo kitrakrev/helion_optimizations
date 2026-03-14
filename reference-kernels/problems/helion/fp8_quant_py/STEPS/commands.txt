@@ -1,0 +1,9 @@
+### Commands Used for fp8_quant_py
+- `mkdir -p fp8_quant_py/STEPS fp8_quant_py/BEST_ACF`
+- `cp /opt/booster_pack/fp8_group_quant_*.acf fp8_quant_py/BEST_ACF/`: Copy booster_pack ACFs to BEST_ACF (local best). Autotune uses BEST_ACF first, then booster_pack.
+- `python eval.py test fp8_quant_py/`: Verified initial correctness.
+- `python eval.py benchmark fp8_quant_py/`: Estabished baseline performance.
+- `python eval.py test fp8_quant_py/`: Verified correctness after optimization.
+- `python eval.py benchmark fp8_quant_py/`: Used with `submission-local.py` to autotune benchmark shapes with ACF search.
+- `popcorn join iw36kLI4BxXsI9QWpFk8kw`: Joined the challenge.
+- `popcorn submit fp8_quant_py/submission.py`: Final submission.

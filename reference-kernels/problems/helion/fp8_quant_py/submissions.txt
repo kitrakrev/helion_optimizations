@@ -1,0 +1,6 @@
+| Submission Type | ACF Used | Metrics | Status |
+|-----------------|----------|---------|--------|
+| Leaderboard     | Yes      | N/A     | FAILED (Internal Error 1) |
+| Leaderboard     | No       | Pending | Running |
+| Test            | No       | Passed  | SUCCESS |
+| Test            | Yes      | Pending | Running |

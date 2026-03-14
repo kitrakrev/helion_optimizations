@@ -1,0 +1,14 @@
+Running 3 correctness tests...
+  Test 0: PASS  {'B': 1, 'T': 64, 'H': 2, 'K': 64, 'V': 64, 'seed': 4242}
+  Test 1: PASS  {'B': 2, 'T': 128, 'H': 4, 'K': 64, 'V': 64, 'seed': 5236}
+  Test 2: PASS  {'B': 1, 'T': 256, 'H': 4, 'K': 64, 'V': 128, 'seed': 1001}
+All tests passed.
+
+Running 7 benchmarks...
+  Benchmark 0: 0.0061 ms (min=0.0061, max=0.0062)  {'B': 1, 'T': 64, 'H': 1, 'K': 64, 'V': 64, 'seed': 31232}
+  Benchmark 1: 0.0497 ms (min=0.0496, max=0.0502)  {'B': 2, 'T': 512, 'H': 3, 'K': 64, 'V': 64, 'seed': 4052}
+  Benchmark 2: 0.0973 ms (min=0.0972, max=0.0980)  {'B': 2, 'T': 1024, 'H': 3, 'K': 64, 'V': 64, 'seed': 2146}
+  Benchmark 3: 0.8289 ms (min=0.8283, max=0.8296)  {'B': 3, 'T': 1024, 'H': 4, 'K': 100, 'V': 100, 'seed': 3129}
+  Benchmark 4: 1.0310 ms (min=1.0306, max=1.0314)  {'B': 4, 'T': 1024, 'H': 4, 'K': 128, 'V': 128, 'seed': 54352}
+  Benchmark 5: 1.5065 ms (min=1.5061, max=1.5069)  {'B': 2, 'T': 1536, 'H': 4, 'K': 128, 'V': 128, 'seed': 71234}
+  Benchmark 6: 0.2072 ms (min=0.2068, max=0.2073)  {'B': 4, 'T': 2048, 'H': 8, 'K': 64, 'V': 64, 'seed': 82345}
