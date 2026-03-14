@@ -1,0 +1,5 @@
+ip: "46.243.144.153"
+name: "helion-together-raptor"
+password: "WKFQ3U3VXo"
+username: "ubuntu"
+Leaderboard Key: "iw36kLI4BxXsI9QWpFk8kw"
