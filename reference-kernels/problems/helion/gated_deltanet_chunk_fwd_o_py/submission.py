@@ -11,7 +11,6 @@ import torch
 import helion
 import helion.language as hl
 
-
 # Embedded ACF (base64-encoded /opt/booster_pack/chunk_fwd_o_2.acf)
 _ACF_B64 = "dxWiJeYWsl07kkfpP9XX/H8eAH47Ex9AMGrP2GEhPXmylnaxRuyhm7Jm92wfWuRrfhC4Z2c/nyCEuHMPqnKzLfxLYEUwAoRJly4PDJ1N9tsFdoEly63K6Uu64ywKrhZQlmzJkOKxGBpmJLTFgfHzZNkEwb+7JCXzy4HimxgDZAol2iyuihI0A8X0qwqkikZjQa/w0NwGO62O9dFE+eSIh9mNlj9zBa+C2Cb0M5CX20nMpXdk7Huexg=="
 
@@ -86,7 +85,7 @@ def _make_kernel(config: helion.Config):
             qk = hl.dot(q_c, k_c.T, out_dtype=torch.float32)
             g_diff = g_c[:, None] - g_c[None, :]
             qk = qk * torch.exp(g_diff)
-            # Causal mask (must match reference NaN pattern: inf*0=NaN)
+            # Causal mask (must match reference: inf*0=NaN in masked positions)
             idx = hl.arange(tile_t.block_size)
             causal = (idx[:, None] >= idx[None, :]).to(torch.float32)
             qk = qk * causal

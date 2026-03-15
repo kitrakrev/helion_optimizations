@@ -1,0 +1,497 @@
+ACF files: ['/opt/booster_pack/chunk_fwd_o_0.acf', '/opt/booster_pack/chunk_fwd_o_1.acf', '/opt/booster_pack/chunk_fwd_o_2.acf', '/opt/booster_pack/chunk_fwd_o_3.acf', '/opt/booster_pack/chunk_fwd_o_4.acf', '/opt/booster_pack/chunk_fwd_o_5.acf', '/opt/booster_pack/chunk_fwd_o_6.acf', '']
+Effort: quick
+Shapes: [(1, 64, 2, 64, 64), (2, 128, 4, 64, 64), (1, 256, 4, 64, 128), (1, 64, 1, 64, 64), (2, 512, 3, 64, 64), (2, 1024, 3, 64, 64), (3, 1024, 4, 100, 100), (4, 1024, 4, 128, 128), (2, 1536, 4, 128, 128), (4, 2048, 8, 64, 64)]
+
+[0] Autotuning shape (1, 64, 2, 64, 64)...
+[0s] Autotune random seed: 4006962484
+[0s] Starting LFBOTreeSearch with initial_population=FROM_DEFAULT, copies=2, max_generations=5, similarity_penalty=1.0
+Initial population precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[4s] Skipping config with accuracy mismatch: helion.Config(advanced_controls_file='/opt/booster_pack/chunk_fwd_o_0.acf', block_sizes=[], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', '', ''], loop_orders=[[0, 1]], num_stages=1, num_warps=4, pid_type='flat', range_flattens=[None], range_multi_buffers=[None], range_num_stages=[0], range_unroll_factors=[0], range_warp_specializes=[None])
+Tensor-likes are not close!
+
+Mismatched elements: 7872 / 8192 (96.1%)
+Greatest absolute difference: nan at index (0, 0, 0, 0) (up to 0.01 allowed)
+Greatest relative difference: nan at index (0, 0, 0, 0) (up to 0.01 allowed)
+Use HELION_AUTOTUNE_ACCURACY_CHECK=0 to disable this check.
+
+Initial population exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[4s] Adaptive compile timeout: 30s (90% percentile=4.4s, bounds=[30.0s, 60s])
+  [ERROR] No working config found from autotuning
+Traceback (most recent call last):
+  File "/home/ubuntu/karthik/reference-kernels/problems/helion/gated_deltanet_chunk_fwd_o_py/autotune.py", line 161, in main
+    best_config = bound.autotune((q, k, v_new, h, g, scale), force=True)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/runtime/kernel.py", line 716, in autotune
+    config = self.env.backend.autotune(self, args, force=force, **kwargs)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/_compiler/backend.py", line 526, in autotune
+    ).autotune(skip_cache=force)
+      ~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_cache.py", line 192, in autotune
+    return self.autotuner.autotune()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 951, in autotune
+    best = self._autotune()
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/surrogate_pattern_search.py", line 356, in _autotune
+    self.log(
+    ~~~~~~~~^
+        f"Initial random population of {len(self.population)}, {len(starting_points)} starting points:",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.statistics,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/logger.py", line 180, in __call__
+    message = " ".join(map(_maybe_call, msg))
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/logger.py", line 252, in _maybe_call
+    return fn()
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 1379, in statistics
+    return population_statistics(self.population)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 1532, in population_statistics
+    raise exc.NoConfigFound
+helion.exc.NoConfigFound: No working config found from autotuning
+
+[1] Autotuning shape (2, 128, 4, 64, 64)...
+[0s] Autotune random seed: 4006968233
+[0s] Starting LFBOTreeSearch with initial_population=FROM_DEFAULT, copies=2, max_generations=5, similarity_penalty=1.0
+Initial population precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[4s] Skipping config with accuracy mismatch: helion.Config(advanced_controls_file='/opt/booster_pack/chunk_fwd_o_0.acf', block_sizes=[], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', '', ''], loop_orders=[[0, 1]], num_stages=1, num_warps=4, pid_type='flat', range_flattens=[None], range_multi_buffers=[None], range_num_stages=[0], range_unroll_factors=[0], range_warp_specializes=[None])
+Tensor-likes are not close!
+
+Mismatched elements: 64000 / 65536 (97.7%)
+Greatest absolute difference: nan at index (0, 0, 0, 0) (up to 0.01 allowed)
+Greatest relative difference: nan at index (0, 0, 0, 0) (up to 0.01 allowed)
+Use HELION_AUTOTUNE_ACCURACY_CHECK=0 to disable this check.
+
+Initial population exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[4s] Adaptive compile timeout: 30s (90% percentile=4.4s, bounds=[30.0s, 60s])
+  [ERROR] No working config found from autotuning
+Traceback (most recent call last):
+  File "/home/ubuntu/karthik/reference-kernels/problems/helion/gated_deltanet_chunk_fwd_o_py/autotune.py", line 161, in main
+    best_config = bound.autotune((q, k, v_new, h, g, scale), force=True)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/runtime/kernel.py", line 716, in autotune
+    config = self.env.backend.autotune(self, args, force=force, **kwargs)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/_compiler/backend.py", line 526, in autotune
+    ).autotune(skip_cache=force)
+      ~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_cache.py", line 192, in autotune
+    return self.autotuner.autotune()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 951, in autotune
+    best = self._autotune()
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/surrogate_pattern_search.py", line 356, in _autotune
+    self.log(
+    ~~~~~~~~^
+        f"Initial random population of {len(self.population)}, {len(starting_points)} starting points:",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.statistics,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/logger.py", line 180, in __call__
+    message = " ".join(map(_maybe_call, msg))
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/logger.py", line 252, in _maybe_call
+    return fn()
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 1379, in statistics
+    return population_statistics(self.population)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 1532, in population_statistics
+    raise exc.NoConfigFound
+helion.exc.NoConfigFound: No working config found from autotuning
+
+[2] Autotuning shape (1, 256, 4, 64, 128)...
+[0s] Autotune random seed: 4006973265
+[0s] Starting LFBOTreeSearch with initial_population=FROM_DEFAULT, copies=2, max_generations=5, similarity_penalty=1.0
+Initial population precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[4s] Skipping config with accuracy mismatch: helion.Config(advanced_controls_file='/opt/booster_pack/chunk_fwd_o_0.acf', block_sizes=[], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', '', ''], loop_orders=[[0, 1]], num_stages=1, num_warps=4, pid_type='flat', range_flattens=[None], range_multi_buffers=[None], range_num_stages=[0], range_unroll_factors=[0], range_warp_specializes=[None])
+Tensor-likes are not close!
+
+Mismatched elements: 128512 / 131072 (98.0%)
+Greatest absolute difference: nan at index (0, 0, 0, 0) (up to 0.01 allowed)
+Greatest relative difference: nan at index (0, 0, 0, 0) (up to 0.01 allowed)
+Use HELION_AUTOTUNE_ACCURACY_CHECK=0 to disable this check.
+
+Initial population exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[4s] Adaptive compile timeout: 30s (90% percentile=4.4s, bounds=[30.0s, 60s])
+  [ERROR] No working config found from autotuning
+Traceback (most recent call last):
+  File "/home/ubuntu/karthik/reference-kernels/problems/helion/gated_deltanet_chunk_fwd_o_py/autotune.py", line 161, in main
+    best_config = bound.autotune((q, k, v_new, h, g, scale), force=True)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/runtime/kernel.py", line 716, in autotune
+    config = self.env.backend.autotune(self, args, force=force, **kwargs)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/_compiler/backend.py", line 526, in autotune
+    ).autotune(skip_cache=force)
+      ~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_cache.py", line 192, in autotune
+    return self.autotuner.autotune()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 951, in autotune
+    best = self._autotune()
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/surrogate_pattern_search.py", line 356, in _autotune
+    self.log(
+    ~~~~~~~~^
+        f"Initial random population of {len(self.population)}, {len(starting_points)} starting points:",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.statistics,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/logger.py", line 180, in __call__
+    message = " ".join(map(_maybe_call, msg))
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/logger.py", line 252, in _maybe_call
+    return fn()
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 1379, in statistics
+    return population_statistics(self.population)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 1532, in population_statistics
+    raise exc.NoConfigFound
+helion.exc.NoConfigFound: No working config found from autotuning
+
+[3] Autotuning shape (1, 64, 1, 64, 64)...
+[0s] Autotune random seed: 4006978471
+[0s] Starting LFBOTreeSearch with initial_population=FROM_DEFAULT, copies=2, max_generations=5, similarity_penalty=1.0
+Initial population precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[4s] Skipping config with accuracy mismatch: helion.Config(advanced_controls_file='/opt/booster_pack/chunk_fwd_o_0.acf', block_sizes=[], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', '', ''], loop_orders=[[0, 1]], num_stages=1, num_warps=4, pid_type='flat', range_flattens=[None], range_multi_buffers=[None], range_num_stages=[0], range_unroll_factors=[0], range_warp_specializes=[None])
+Tensor-likes are not close!
+
+Mismatched elements: 3904 / 4096 (95.3%)
+Greatest absolute difference: nan at index (0, 0, 0, 0) (up to 0.01 allowed)
+Greatest relative difference: nan at index (0, 0, 0, 0) (up to 0.01 allowed)
+Use HELION_AUTOTUNE_ACCURACY_CHECK=0 to disable this check.
+
+Initial population exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[4s] Adaptive compile timeout: 30s (90% percentile=4.3s, bounds=[30.0s, 60s])
+  [ERROR] No working config found from autotuning
+Traceback (most recent call last):
+  File "/home/ubuntu/karthik/reference-kernels/problems/helion/gated_deltanet_chunk_fwd_o_py/autotune.py", line 161, in main
+    best_config = bound.autotune((q, k, v_new, h, g, scale), force=True)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/runtime/kernel.py", line 716, in autotune
+    config = self.env.backend.autotune(self, args, force=force, **kwargs)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/_compiler/backend.py", line 526, in autotune
+    ).autotune(skip_cache=force)
+      ~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_cache.py", line 192, in autotune
+    return self.autotuner.autotune()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 951, in autotune
+    best = self._autotune()
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/surrogate_pattern_search.py", line 356, in _autotune
+    self.log(
+    ~~~~~~~~^
+        f"Initial random population of {len(self.population)}, {len(starting_points)} starting points:",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.statistics,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/logger.py", line 180, in __call__
+    message = " ".join(map(_maybe_call, msg))
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/logger.py", line 252, in _maybe_call
+    return fn()
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 1379, in statistics
+    return population_statistics(self.population)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 1532, in population_statistics
+    raise exc.NoConfigFound
+helion.exc.NoConfigFound: No working config found from autotuning
+
+[4] Autotuning shape (2, 512, 3, 64, 64)...
+[0s] Autotune random seed: 4006983352
+[0s] Starting LFBOTreeSearch with initial_population=FROM_DEFAULT, copies=2, max_generations=5, similarity_penalty=1.0
+Initial population precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[4s] Skipping config with accuracy mismatch: helion.Config(advanced_controls_file='/opt/booster_pack/chunk_fwd_o_0.acf', block_sizes=[], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', '', ''], loop_orders=[[0, 1]], num_stages=1, num_warps=4, pid_type='flat', range_flattens=[None], range_multi_buffers=[None], range_num_stages=[0], range_unroll_factors=[0], range_warp_specializes=[None])
+Tensor-likes are not close!
+
+Mismatched elements: 193088 / 196608 (98.2%)
+Greatest absolute difference: nan at index (0, 0, 0, 0) (up to 0.01 allowed)
+Greatest relative difference: nan at index (0, 0, 0, 0) (up to 0.01 allowed)
+Use HELION_AUTOTUNE_ACCURACY_CHECK=0 to disable this check.
+
+Initial population exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[4s] Adaptive compile timeout: 30s (90% percentile=4.4s, bounds=[30.0s, 60s])
+  [ERROR] No working config found from autotuning
+Traceback (most recent call last):
+  File "/home/ubuntu/karthik/reference-kernels/problems/helion/gated_deltanet_chunk_fwd_o_py/autotune.py", line 161, in main
+    best_config = bound.autotune((q, k, v_new, h, g, scale), force=True)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/runtime/kernel.py", line 716, in autotune
+    config = self.env.backend.autotune(self, args, force=force, **kwargs)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/_compiler/backend.py", line 526, in autotune
+    ).autotune(skip_cache=force)
+      ~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_cache.py", line 192, in autotune
+    return self.autotuner.autotune()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 951, in autotune
+    best = self._autotune()
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/surrogate_pattern_search.py", line 356, in _autotune
+    self.log(
+    ~~~~~~~~^
+        f"Initial random population of {len(self.population)}, {len(starting_points)} starting points:",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.statistics,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/logger.py", line 180, in __call__
+    message = " ".join(map(_maybe_call, msg))
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/logger.py", line 252, in _maybe_call
+    return fn()
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 1379, in statistics
+    return population_statistics(self.population)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 1532, in population_statistics
+    raise exc.NoConfigFound
+helion.exc.NoConfigFound: No working config found from autotuning
+
+[5] Autotuning shape (2, 1024, 3, 64, 64)...
+[0s] Autotune random seed: 4006988392
+[0s] Starting LFBOTreeSearch with initial_population=FROM_DEFAULT, copies=2, max_generations=5, similarity_penalty=1.0
+Initial population precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[4s] Skipping config with accuracy mismatch: helion.Config(advanced_controls_file='/opt/booster_pack/chunk_fwd_o_0.acf', block_sizes=[], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', '', ''], loop_orders=[[0, 1]], num_stages=1, num_warps=4, pid_type='flat', range_flattens=[None], range_multi_buffers=[None], range_num_stages=[0], range_unroll_factors=[0], range_warp_specializes=[None])
+Tensor-likes are not close!
+
+Mismatched elements: 386688 / 393216 (98.3%)
+Greatest absolute difference: nan at index (0, 0, 0, 0) (up to 0.01 allowed)
+Greatest relative difference: nan at index (0, 0, 0, 0) (up to 0.01 allowed)
+Use HELION_AUTOTUNE_ACCURACY_CHECK=0 to disable this check.
+
+Initial population exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[4s] Adaptive compile timeout: 30s (90% percentile=4.4s, bounds=[30.0s, 60s])
+  [ERROR] No working config found from autotuning
+Traceback (most recent call last):
+  File "/home/ubuntu/karthik/reference-kernels/problems/helion/gated_deltanet_chunk_fwd_o_py/autotune.py", line 161, in main
+    best_config = bound.autotune((q, k, v_new, h, g, scale), force=True)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/runtime/kernel.py", line 716, in autotune
+    config = self.env.backend.autotune(self, args, force=force, **kwargs)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/_compiler/backend.py", line 526, in autotune
+    ).autotune(skip_cache=force)
+      ~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_cache.py", line 192, in autotune
+    return self.autotuner.autotune()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 951, in autotune
+    best = self._autotune()
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/surrogate_pattern_search.py", line 356, in _autotune
+    self.log(
+    ~~~~~~~~^
+        f"Initial random population of {len(self.population)}, {len(starting_points)} starting points:",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.statistics,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/logger.py", line 180, in __call__
+    message = " ".join(map(_maybe_call, msg))
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/logger.py", line 252, in _maybe_call
+    return fn()
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 1379, in statistics
+    return population_statistics(self.population)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 1532, in population_statistics
+    raise exc.NoConfigFound
+helion.exc.NoConfigFound: No working config found from autotuning
+
+[6] Autotuning shape (3, 1024, 4, 100, 100)...
+[0s] Autotune random seed: 4006993423
+[0s] Starting LFBOTreeSearch with initial_population=FROM_DEFAULT, copies=2, max_generations=5, similarity_penalty=1.0
+Initial population precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[4s] Skipping config with accuracy mismatch: helion.Config(advanced_controls_file='/opt/booster_pack/chunk_fwd_o_0.acf', block_sizes=[], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', '', ''], loop_orders=[[0, 1]], num_stages=1, num_warps=4, pid_type='flat', range_flattens=[None], range_multi_buffers=[None], range_num_stages=[0], range_unroll_factors=[0], range_warp_specializes=[None])
+Tensor-likes are not close!
+
+Mismatched elements: 1208400 / 1228800 (98.3%)
+Greatest absolute difference: nan at index (0, 0, 0, 0) (up to 0.01 allowed)
+Greatest relative difference: nan at index (0, 0, 0, 0) (up to 0.01 allowed)
+Use HELION_AUTOTUNE_ACCURACY_CHECK=0 to disable this check.
+
+Initial population exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[4s] Adaptive compile timeout: 30s (90% percentile=4.6s, bounds=[30.0s, 60s])
+  [ERROR] No working config found from autotuning
+Traceback (most recent call last):
+  File "/home/ubuntu/karthik/reference-kernels/problems/helion/gated_deltanet_chunk_fwd_o_py/autotune.py", line 161, in main
+    best_config = bound.autotune((q, k, v_new, h, g, scale), force=True)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/runtime/kernel.py", line 716, in autotune
+    config = self.env.backend.autotune(self, args, force=force, **kwargs)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/_compiler/backend.py", line 526, in autotune
+    ).autotune(skip_cache=force)
+      ~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_cache.py", line 192, in autotune
+    return self.autotuner.autotune()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 951, in autotune
+    best = self._autotune()
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/surrogate_pattern_search.py", line 356, in _autotune
+    self.log(
+    ~~~~~~~~^
+        f"Initial random population of {len(self.population)}, {len(starting_points)} starting points:",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.statistics,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/logger.py", line 180, in __call__
+    message = " ".join(map(_maybe_call, msg))
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/logger.py", line 252, in _maybe_call
+    return fn()
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 1379, in statistics
+    return population_statistics(self.population)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 1532, in population_statistics
+    raise exc.NoConfigFound
+helion.exc.NoConfigFound: No working config found from autotuning
+
+[7] Autotuning shape (4, 1024, 4, 128, 128)...
+[0s] Autotune random seed: 4006998889
+[0s] Starting LFBOTreeSearch with initial_population=FROM_DEFAULT, copies=2, max_generations=5, similarity_penalty=1.0
+Initial population precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[4s] Skipping config with accuracy mismatch: helion.Config(advanced_controls_file='/opt/booster_pack/chunk_fwd_o_0.acf', block_sizes=[], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', '', ''], loop_orders=[[0, 1]], num_stages=1, num_warps=4, pid_type='flat', range_flattens=[None], range_multi_buffers=[None], range_num_stages=[0], range_unroll_factors=[0], range_warp_specializes=[None])
+Tensor-likes are not close!
+
+Mismatched elements: 2062336 / 2097152 (98.3%)
+Greatest absolute difference: nan at index (0, 0, 0, 0) (up to 0.01 allowed)
+Greatest relative difference: nan at index (0, 0, 0, 0) (up to 0.01 allowed)
+Use HELION_AUTOTUNE_ACCURACY_CHECK=0 to disable this check.
+
+Initial population exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[4s] Adaptive compile timeout: 30s (90% percentile=4.6s, bounds=[30.0s, 60s])
+  [ERROR] No working config found from autotuning
+Traceback (most recent call last):
+  File "/home/ubuntu/karthik/reference-kernels/problems/helion/gated_deltanet_chunk_fwd_o_py/autotune.py", line 161, in main
+    best_config = bound.autotune((q, k, v_new, h, g, scale), force=True)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/runtime/kernel.py", line 716, in autotune
+    config = self.env.backend.autotune(self, args, force=force, **kwargs)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/_compiler/backend.py", line 526, in autotune
+    ).autotune(skip_cache=force)
+      ~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_cache.py", line 192, in autotune
+    return self.autotuner.autotune()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 951, in autotune
+    best = self._autotune()
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/surrogate_pattern_search.py", line 356, in _autotune
+    self.log(
+    ~~~~~~~~^
+        f"Initial random population of {len(self.population)}, {len(starting_points)} starting points:",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.statistics,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/logger.py", line 180, in __call__
+    message = " ".join(map(_maybe_call, msg))
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/logger.py", line 252, in _maybe_call
+    return fn()
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 1379, in statistics
+    return population_statistics(self.population)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 1532, in population_statistics
+    raise exc.NoConfigFound
+helion.exc.NoConfigFound: No working config found from autotuning
+
+[8] Autotuning shape (2, 1536, 4, 128, 128)...
+[0s] Autotune random seed: 4007004286
+[0s] Starting LFBOTreeSearch with initial_population=FROM_DEFAULT, copies=2, max_generations=5, similarity_penalty=1.0
+Initial population precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[4s] Skipping config with accuracy mismatch: helion.Config(advanced_controls_file='/opt/booster_pack/chunk_fwd_o_0.acf', block_sizes=[], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', '', ''], loop_orders=[[0, 1]], num_stages=1, num_warps=4, pid_type='flat', range_flattens=[None], range_multi_buffers=[None], range_num_stages=[0], range_unroll_factors=[0], range_warp_specializes=[None])
+Tensor-likes are not close!
+
+Mismatched elements: 1547136 / 1572864 (98.4%)
+Greatest absolute difference: nan at index (0, 0, 0, 0) (up to 0.01 allowed)
+Greatest relative difference: nan at index (0, 0, 0, 0) (up to 0.01 allowed)
+Use HELION_AUTOTUNE_ACCURACY_CHECK=0 to disable this check.
+
+Initial population exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[4s] Adaptive compile timeout: 30s (90% percentile=4.6s, bounds=[30.0s, 60s])
+  [ERROR] No working config found from autotuning
+Traceback (most recent call last):
+  File "/home/ubuntu/karthik/reference-kernels/problems/helion/gated_deltanet_chunk_fwd_o_py/autotune.py", line 161, in main
+    best_config = bound.autotune((q, k, v_new, h, g, scale), force=True)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/runtime/kernel.py", line 716, in autotune
+    config = self.env.backend.autotune(self, args, force=force, **kwargs)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/_compiler/backend.py", line 526, in autotune
+    ).autotune(skip_cache=force)
+      ~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_cache.py", line 192, in autotune
+    return self.autotuner.autotune()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 951, in autotune
+    best = self._autotune()
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/surrogate_pattern_search.py", line 356, in _autotune
+    self.log(
+    ~~~~~~~~^
+        f"Initial random population of {len(self.population)}, {len(starting_points)} starting points:",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.statistics,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/logger.py", line 180, in __call__
+    message = " ".join(map(_maybe_call, msg))
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/logger.py", line 252, in _maybe_call
+    return fn()
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 1379, in statistics
+    return population_statistics(self.population)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 1532, in population_statistics
+    raise exc.NoConfigFound
+helion.exc.NoConfigFound: No working config found from autotuning
+
+[9] Autotuning shape (4, 2048, 8, 64, 64)...
+[0s] Autotune random seed: 4007009708
+[0s] Starting LFBOTreeSearch with initial_population=FROM_DEFAULT, copies=2, max_generations=5, similarity_penalty=1.0
+Initial population precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[4s] Skipping config with accuracy mismatch: helion.Config(advanced_controls_file='/opt/booster_pack/chunk_fwd_o_0.acf', block_sizes=[], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', '', ''], loop_orders=[[0, 1]], num_stages=1, num_warps=4, pid_type='flat', range_flattens=[None], range_multi_buffers=[None], range_num_stages=[0], range_unroll_factors=[0], range_warp_specializes=[None])
+Tensor-likes are not close!
+
+Mismatched elements: 4126528 / 4194304 (98.4%)
+Greatest absolute difference: nan at index (0, 0, 0, 0) (up to 0.01 allowed)
+Greatest relative difference: nan at index (0, 0, 0, 0) (up to 0.01 allowed)
+Use HELION_AUTOTUNE_ACCURACY_CHECK=0 to disable this check.
+
+Initial population exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[4s] Adaptive compile timeout: 30s (90% percentile=4.4s, bounds=[30.0s, 60s])
+  [ERROR] No working config found from autotuning
+Traceback (most recent call last):
+  File "/home/ubuntu/karthik/reference-kernels/problems/helion/gated_deltanet_chunk_fwd_o_py/autotune.py", line 161, in main
+    best_config = bound.autotune((q, k, v_new, h, g, scale), force=True)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/runtime/kernel.py", line 716, in autotune
+    config = self.env.backend.autotune(self, args, force=force, **kwargs)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/_compiler/backend.py", line 526, in autotune
+    ).autotune(skip_cache=force)
+      ~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_cache.py", line 192, in autotune
+    return self.autotuner.autotune()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 951, in autotune
+    best = self._autotune()
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/surrogate_pattern_search.py", line 356, in _autotune
+    self.log(
+    ~~~~~~~~^
+        f"Initial random population of {len(self.population)}, {len(starting_points)} starting points:",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.statistics,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/logger.py", line 180, in __call__
+    message = " ".join(map(_maybe_call, msg))
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/logger.py", line 252, in _maybe_call
+    return fn()
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 1379, in statistics
+    return population_statistics(self.population)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 1532, in population_statistics
+    raise exc.NoConfigFound
+helion.exc.NoConfigFound: No working config found from autotuning
+
+============================================================
+SHAPE_CONFIGS (paste into submission.py):
+============================================================

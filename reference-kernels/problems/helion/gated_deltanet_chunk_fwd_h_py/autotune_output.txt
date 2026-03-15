@@ -1,0 +1,1596 @@
+ACF files: ['/opt/booster_pack/chunk_fwd_h_0.acf', '']
+Effort: quick
+Shapes: [(1, 64, 2, 64, 64), (2, 128, 4, 64, 64), (1, 256, 4, 64, 128), (1, 64, 1, 64, 64), (2, 512, 3, 64, 64), (2, 1024, 3, 64, 64), (3, 1024, 4, 100, 100), (4, 1024, 4, 128, 128), (2, 1536, 4, 128, 128), (4, 2048, 8, 64, 64)]
+
+[0] Autotuning shape (1, 64, 2, 64, 64)...
+[0s] Autotune random seed: 4006054871
+[0s] Starting LFBOTreeSearch with initial_population=FROM_DEFAULT, copies=2, max_generations=5, similarity_penalty=1.0
+Initial population precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+Initial population exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[4s] Adaptive compile timeout: 30s (90% percentile=4.3s, bounds=[30.0s, 60s])
+[4s] Initial random population of 1, 1 starting points: 
+ok=1
+min=0.0102
+mid=0.0102
+max=0.0102
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [32],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None],
+ 'static_ranges': [False]}
+[4s] All labels are identical, skip training surrogate.
+[4s] Generation 1 starting: 9 neighbors, 1 active search path(s)
+Generation 1: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10/10 4.3 configs/s
+
+Generation 1: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 10/10 18.9 configs/s
+
+[12s] Generation 1 complete: 
+ok=11
+min=0.0061
+mid=0.0082
+max=0.0102
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [16],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 1,
+ 'num_warps': 16,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, False],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None],
+ 'static_ranges': [False]}
+[12s] Fitting surrogate: 12 points, 12 targets
+[12s] Generation 2 starting: 8 neighbors, 1 active search path(s)
+Generation 2: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8/8 4.6 configs/s
+
+Generation 2: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━━━ 8/8 19.2 configs/s
+
+[20s] Generation 2 complete: 
+ok=9
+min=0.0061
+mid=0.0062
+max=0.0082
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [16],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 1,
+ 'num_warps': 16,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, False],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None],
+ 'static_ranges': [False]}
+[20s] Fitting surrogate: 21 points, 21 targets
+[20s] Generation 3 starting: 12 neighbors, 1 active search path(s)
+Generation 3: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12/12 3.0 configs/s
+
+Generation 3: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━━ 12/12 8.0 configs/s
+
+[30s] Generation 3 complete: 
+ok=13
+min=0.0061
+mid=0.0081
+max=0.0082
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [16],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 1,
+ 'num_warps': 16,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, False],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None],
+ 'static_ranges': [False]}
+[30s] Fitting surrogate: 34 points, 34 targets
+[30s] Autotuning complete in 31.0s after searching 31 configs.
+One can hardcode the best config and skip autotuning with:
+    @helion.kernel(config=helion.Config(advanced_controls_file='/opt/booster_pack/chunk_fwd_h_0.acf', block_sizes=[16], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', '', ''], loop_orders=[[0, 1]], num_stages=1, num_warps=16, pid_type='flat', range_flattens=[None, False], range_multi_buffers=[None, None], range_num_stages=[0, 0], range_unroll_factors=[0, 0], range_warp_specializes=[None, None], static_ranges=[False]), static_shapes=True)
+
+[30s] Code of selected kernel: /tmp/torchinductor_ubuntu/2b/c2btmtausedrqjphquearsqmcfovpcnjqado2esg2xpebdpu2z5o.py
+  [DONE] Best config:
+    helion.Config(advanced_controls_file=_ACF, block_sizes=[16], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', '', ''], loop_orders=[[0, 1]], num_stages=1, num_warps=16, pid_type="flat", range_flattens=[None, False], range_multi_buffers=[None, None], range_num_stages=[0, 0], range_unroll_factors=[0, 0], range_warp_specializes=[None, None], static_ranges=[False])
+
+[1] Autotuning shape (2, 128, 4, 64, 64)...
+[0s] Autotune random seed: 4006086890
+[0s] Starting LFBOTreeSearch with initial_population=FROM_DEFAULT, copies=2, max_generations=5, similarity_penalty=1.0
+Initial population precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+Initial population exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[4s] Adaptive compile timeout: 30s (90% percentile=4.2s, bounds=[30.0s, 60s])
+[4s] Initial random population of 1, 1 starting points: 
+ok=1
+min=0.0144
+mid=0.0144
+max=0.0144
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [32],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None],
+ 'static_ranges': [False]}
+[4s] All labels are identical, skip training surrogate.
+[4s] Generation 1 starting: 9 neighbors, 1 active search path(s)
+Generation 1: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10/10 6.3 configs/s
+
+Generation 1: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 10/10 18.7 configs/s
+
+[12s] Generation 1 complete: 
+ok=11
+min=0.0084
+mid=0.0123
+max=0.0410
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [8],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[1, 0]],
+ 'num_stages': 2,
+ 'num_warps': 2,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None],
+ 'static_ranges': [False]}
+[12s] Fitting surrogate: 12 points, 12 targets
+[12s] Generation 2 starting: 9 neighbors, 1 active search path(s)
+Generation 2: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9/9 4.4 configs/s
+
+Generation 2: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━━━ 9/9 19.2 configs/s
+
+[20s] Generation 2 complete: 
+ok=10
+min=0.0084
+mid=0.0123
+max=0.0143
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [8],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[1, 0]],
+ 'num_stages': 2,
+ 'num_warps': 2,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None],
+ 'static_ranges': [False]}
+[20s] Fitting surrogate: 22 points, 22 targets
+[20s] Generation 3 starting: 7 neighbors, 1 active search path(s)
+Generation 3: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7/7 7.2 configs/s
+
+Generation 3: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━━━ 7/7 20.0 configs/s
+
+[27s] Generation 3 complete: 
+ok=8
+min=0.0084
+mid=0.0102
+max=0.0123
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [8],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[1, 0]],
+ 'num_stages': 2,
+ 'num_warps': 2,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None],
+ 'static_ranges': [False]}
+[27s] Fitting surrogate: 30 points, 30 targets
+[27s] Autotuning complete in 27.3s after searching 27 configs.
+One can hardcode the best config and skip autotuning with:
+    @helion.kernel(config=helion.Config(advanced_controls_file='/opt/booster_pack/chunk_fwd_h_0.acf', block_sizes=[8], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', '', ''], loop_orders=[[1, 0]], num_stages=2, num_warps=2, pid_type='flat', range_flattens=[None, None], range_multi_buffers=[None, None], range_num_stages=[0, 0], range_unroll_factors=[0, 0], range_warp_specializes=[None, None], static_ranges=[False]), static_shapes=True)
+
+[27s] Code of selected kernel: /tmp/torchinductor_ubuntu/bh/cbhd5dhr42kmukvpgle2i3bftniu3t3dymfnocbgkytzmbsu6oc4.py
+  [DONE] Best config:
+    helion.Config(advanced_controls_file=_ACF, block_sizes=[8], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', '', ''], loop_orders=[[1, 0]], num_stages=2, num_warps=2, pid_type="flat", range_flattens=[None, None], range_multi_buffers=[None, None], range_num_stages=[0, 0], range_unroll_factors=[0, 0], range_warp_specializes=[None, None], static_ranges=[False])
+
+[2] Autotuning shape (1, 256, 4, 64, 128)...
+[0s] Autotune random seed: 4006114659
+[0s] Starting LFBOTreeSearch with initial_population=FROM_DEFAULT, copies=2, max_generations=5, similarity_penalty=1.0
+Initial population precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+Initial population exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[4s] Adaptive compile timeout: 30s (90% percentile=4.4s, bounds=[30.0s, 60s])
+[4s] Initial random population of 1, 1 starting points: 
+ok=1
+min=0.0205
+mid=0.0205
+max=0.0205
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [32],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None],
+ 'static_ranges': [False]}
+[4s] All labels are identical, skip training surrogate.
+[4s] Generation 1 starting: 9 neighbors, 1 active search path(s)
+Generation 1: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10/10 3.3 configs/s
+
+Generation 1: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 10/10 18.6 configs/s
+
+[14s] Generation 1 complete: 
+ok=11
+min=0.0143
+mid=0.0267
+max=0.7239
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [8],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', 'last', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 2,
+ 'num_warps': 16,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None],
+ 'static_ranges': [False]}
+[14s] Fitting surrogate: 12 points, 12 targets
+[14s] Generation 2 starting: 9 neighbors, 1 active search path(s)
+Generation 2: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10/10 6.8 configs/s
+
+Generation 2: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 10/10 19.1 configs/s
+
+[23s] Generation 2 complete: 
+ok=11
+min=0.0123
+mid=0.0164
+max=0.0368
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [2],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', 'last', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 2,
+ 'num_warps': 4,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 1],
+ 'range_warp_specializes': [None, None],
+ 'static_ranges': [False]}
+[23s] Fitting surrogate: 23 points, 23 targets
+[23s] Generation 3 starting: 14 neighbors, 1 active search path(s)
+Generation 3: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14/14 3.4 configs/s
+
+Generation 3: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 14/14 18.4 configs/s
+
+[35s] Generation 3 complete: 
+ok=15
+min=0.0123
+mid=0.0144
+max=0.0225
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [2],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', 'last', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 2,
+ 'num_warps': 4,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 1],
+ 'range_warp_specializes': [None, None],
+ 'static_ranges': [False]}
+[35s] Fitting surrogate: 38 points, 38 targets
+[35s] Generation 4 starting: 14 neighbors, 1 active search path(s)
+Generation 4: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14/14 3.0 configs/s
+
+Generation 4: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 14/14 18.2 configs/s
+
+[46s] Generation 4 complete: 
+ok=15
+min=0.0103
+mid=0.0144
+max=0.0226
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [8],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['first', '', 'last', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 3,
+ 'num_warps': 4,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None],
+ 'static_ranges': [False]}
+[46s] Fitting surrogate: 53 points, 53 targets
+[47s] Generation 5 starting: 16 neighbors, 1 active search path(s)
+Generation 5: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16/16 2.9 configs/s
+
+Generation 5: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 16/16 18.1 configs/s
+
+[60s] Generation 5 complete: 
+ok=17
+min=0.0102
+mid=0.0103
+max=0.0164
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [8],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['first', '', 'last', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 4,
+ 'num_warps': 4,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None],
+ 'static_ranges': [False]}
+[60s] Fitting surrogate: 70 points, 70 targets
+[60s] Autotuning complete in 60.2s after searching 65 configs.
+One can hardcode the best config and skip autotuning with:
+    @helion.kernel(config=helion.Config(advanced_controls_file='/opt/booster_pack/chunk_fwd_h_0.acf', block_sizes=[8], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['first', '', 'last', '', ''], loop_orders=[[0, 1]], num_stages=4, num_warps=4, pid_type='flat', range_flattens=[None, None], range_multi_buffers=[None, None], range_num_stages=[0, 0], range_unroll_factors=[0, 0], range_warp_specializes=[None, None], static_ranges=[False]), static_shapes=True)
+
+[60s] Code of selected kernel: /tmp/torchinductor_ubuntu/x4/cx47xlkybyjny34ayxgjcuzpw6mdbnkk24yvk7bvcvroh7m63u3d.py
+  [DONE] Best config:
+    helion.Config(advanced_controls_file=_ACF, block_sizes=[8], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['first', '', 'last', '', ''], loop_orders=[[0, 1]], num_stages=4, num_warps=4, pid_type="flat", range_flattens=[None, None], range_multi_buffers=[None, None], range_num_stages=[0, 0], range_unroll_factors=[0, 0], range_warp_specializes=[None, None], static_ranges=[False])
+
+[3] Autotuning shape (1, 64, 1, 64, 64)...
+[0s] Autotune random seed: 4006175291
+[0s] Starting LFBOTreeSearch with initial_population=FROM_DEFAULT, copies=2, max_generations=5, similarity_penalty=1.0
+Initial population precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+Initial population exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[4s] Adaptive compile timeout: 30s (90% percentile=4.1s, bounds=[30.0s, 60s])
+[4s] Initial random population of 1, 1 starting points: 
+ok=1
+min=0.0102
+mid=0.0102
+max=0.0102
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [32],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None],
+ 'static_ranges': [False]}
+[4s] All labels are identical, skip training surrogate.
+[4s] Generation 1 starting: 9 neighbors, 1 active search path(s)
+Generation 1: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10/10 4.3 configs/s
+
+Generation 1: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 10/10 18.9 configs/s
+
+[12s] Generation 1 complete: 
+ok=11
+min=0.0062
+mid=0.0082
+max=0.0102
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [8],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 1,
+ 'num_warps': 8,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 1],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None],
+ 'static_ranges': [False]}
+[12s] Fitting surrogate: 12 points, 12 targets
+[12s] Generation 2 starting: 10 neighbors, 1 active search path(s)
+Generation 2: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10/10 3.3 configs/s
+
+Generation 2: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 10/10 19.3 configs/s
+
+[21s] Generation 2 complete: 
+ok=11
+min=0.0062
+mid=0.0081
+max=0.0082
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [8],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 1,
+ 'num_warps': 8,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 1],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None],
+ 'static_ranges': [False]}
+[21s] Fitting surrogate: 23 points, 23 targets
+[21s] Generation 3 starting: 14 neighbors, 1 active search path(s)
+Generation 3: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14/14 3.0 configs/s
+
+Generation 3: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 14/14 19.1 configs/s
+
+[31s] Generation 3 complete: 
+ok=15
+min=0.0062
+mid=0.0062
+max=0.0082
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [8],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 1,
+ 'num_warps': 8,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 1],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None],
+ 'static_ranges': [False]}
+[31s] Fitting surrogate: 38 points, 38 targets
+[32s] Autotuning complete in 32.0s after searching 35 configs.
+One can hardcode the best config and skip autotuning with:
+    @helion.kernel(config=helion.Config(advanced_controls_file='/opt/booster_pack/chunk_fwd_h_0.acf', block_sizes=[8], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', '', ''], loop_orders=[[0, 1]], num_stages=1, num_warps=8, pid_type='flat', range_flattens=[None, None], range_multi_buffers=[None, None], range_num_stages=[0, 1], range_unroll_factors=[0, 0], range_warp_specializes=[None, None], static_ranges=[False]), static_shapes=True)
+
+[32s] Code of selected kernel: /tmp/torchinductor_ubuntu/k2/ck2raae26pj3ajosb6esvqk3wth2caz6dxva24z56dfzyahtt5of.py
+  [DONE] Best config:
+    helion.Config(advanced_controls_file=_ACF, block_sizes=[8], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', '', ''], loop_orders=[[0, 1]], num_stages=1, num_warps=8, pid_type="flat", range_flattens=[None, None], range_multi_buffers=[None, None], range_num_stages=[0, 1], range_unroll_factors=[0, 0], range_warp_specializes=[None, None], static_ranges=[False])
+
+[4] Autotuning shape (2, 512, 3, 64, 64)...
+[0s] Autotune random seed: 4006207790
+[0s] Starting LFBOTreeSearch with initial_population=FROM_DEFAULT, copies=2, max_generations=5, similarity_penalty=1.0
+Initial population precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+Initial population exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[4s] Adaptive compile timeout: 30s (90% percentile=4.2s, bounds=[30.0s, 60s])
+[4s] Initial random population of 1, 1 starting points: 
+ok=1
+min=0.0349
+mid=0.0349
+max=0.0349
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [32],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None],
+ 'static_ranges': [False]}
+[4s] All labels are identical, skip training surrogate.
+[4s] Generation 1 starting: 9 neighbors, 1 active search path(s)
+Generation 1: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10/10 3.8 configs/s
+
+Generation 1: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 10/10 19.0 configs/s
+
+[12s] Generation 1 complete: 
+ok=11
+min=0.0268
+mid=0.0327
+max=0.0676
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [8],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 1,
+ 'num_warps': 8,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, False],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None],
+ 'static_ranges': [False]}
+[12s] Fitting surrogate: 12 points, 12 targets
+[12s] Generation 2 starting: 9 neighbors, 1 active search path(s)
+Generation 2: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9/9 4.9 configs/s
+
+Generation 2: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━━━ 9/9 17.8 configs/s
+
+[20s] Generation 2 complete: 
+ok=10
+min=0.0268
+mid=0.0287
+max=0.0348
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [8],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 1,
+ 'num_warps': 8,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, False],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None],
+ 'static_ranges': [False]}
+[20s] Fitting surrogate: 22 points, 22 targets
+[20s] Generation 3 starting: 10 neighbors, 1 active search path(s)
+Generation 3: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10/10 6.8 configs/s
+
+Generation 3: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 10/10 18.7 configs/s
+
+[27s] Generation 3 complete: 
+ok=11
+min=0.0184
+mid=0.0267
+max=0.0369
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [8],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_sm_multiplier': 4,
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'pid_type': 'persistent_blocked',
+ 'range_flattens': [None, False],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 2],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None],
+ 'static_ranges': [False]}
+[27s] Fitting surrogate: 33 points, 33 targets
+[28s] Generation 4 starting: 15 neighbors, 1 active search path(s)
+Generation 4: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16/16 3.9 configs/s
+
+Generation 4: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 16/16 17.9 configs/s
+
+[40s] Generation 4 complete: 
+ok=17
+min=0.0144
+mid=0.0227
+max=0.0307
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [8],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_sm_multiplier': 4,
+ 'num_stages': 1,
+ 'num_warps': 8,
+ 'pid_type': 'persistent_blocked',
+ 'range_flattens': [None, False],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 4],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None],
+ 'static_ranges': [False]}
+[40s] Fitting surrogate: 50 points, 50 targets
+[40s] Generation 5 starting: 14 neighbors, 1 active search path(s)
+Generation 5: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14/14 3.5 configs/s
+
+Generation 5: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 14/14 18.1 configs/s
+
+[51s] Generation 5 complete: 
+ok=15
+min=0.0124
+mid=0.0164
+max=0.0246
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [8],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'tensor_descriptor',
+              'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', 'last', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_sm_multiplier': 4,
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'pid_type': 'persistent_blocked',
+ 'range_flattens': [None, False],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 4],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None],
+ 'static_ranges': [False]}
+[51s] Fitting surrogate: 65 points, 65 targets
+[51s] Autotuning complete in 51.2s after searching 60 configs.
+One can hardcode the best config and skip autotuning with:
+    @helion.kernel(config=helion.Config(advanced_controls_file='/opt/booster_pack/chunk_fwd_h_0.acf', block_sizes=[8], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'tensor_descriptor', 'pointer'], l2_groupings=[1], load_eviction_policies=['', 'last', '', '', ''], loop_orders=[[0, 1]], num_sm_multiplier=4, num_stages=1, num_warps=4, pid_type='persistent_blocked', range_flattens=[None, False], range_multi_buffers=[None, None], range_num_stages=[0, 4], range_unroll_factors=[0, 0], range_warp_specializes=[None, None], static_ranges=[False]), static_shapes=True)
+
+[51s] Code of selected kernel: /tmp/torchinductor_ubuntu/t2/ct2lyzq6wjwp52apwf6ozlc7hhhxghxigtgdk5wp5uaktnq3567t.py
+  [DONE] Best config:
+    helion.Config(advanced_controls_file=_ACF, block_sizes=[8], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'tensor_descriptor', 'pointer'], l2_groupings=[1], load_eviction_policies=['', 'last', '', '', ''], loop_orders=[[0, 1]], num_sm_multiplier=4, num_stages=1, num_warps=4, pid_type="persistent_blocked", range_flattens=[None, False], range_multi_buffers=[None, None], range_num_stages=[0, 4], range_unroll_factors=[0, 0], range_warp_specializes=[None, None], static_ranges=[False])
+
+[5] Autotuning shape (2, 1024, 3, 64, 64)...
+[0s] Autotune random seed: 4006259425
+[0s] Starting LFBOTreeSearch with initial_population=FROM_DEFAULT, copies=2, max_generations=5, similarity_penalty=1.0
+Initial population precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+Initial population exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[4s] Adaptive compile timeout: 30s (90% percentile=4.2s, bounds=[30.0s, 60s])
+[4s] Initial random population of 1, 1 starting points: 
+ok=1
+min=0.0656
+mid=0.0656
+max=0.0656
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [32],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None]}
+[4s] All labels are identical, skip training surrogate.
+[4s] Generation 1 starting: 8 neighbors, 1 active search path(s)
+Generation 1: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9/9 4.5 configs/s
+
+Generation 1: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━━━ 9/9 19.4 configs/s
+
+[11s] Generation 1 complete: 
+ok=10
+min=0.0553
+mid=0.0574
+max=0.0881
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [8],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 1,
+ 'num_warps': 1,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, False],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None]}
+[11s] Fitting surrogate: 11 points, 11 targets
+[11s] Generation 2 starting: 7 neighbors, 1 active search path(s)
+Generation 2: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7/7 7.4 configs/s
+
+Generation 2: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━━━ 7/7 20.1 configs/s
+
+[18s] Generation 2 complete: 
+ok=8
+min=0.0389
+mid=0.0512
+max=0.0553
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [2],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 2,
+ 'num_warps': 2,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, False],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None]}
+[18s] Fitting surrogate: 19 points, 19 targets
+[18s] Generation 3 starting: 8 neighbors, 1 active search path(s)
+Generation 3: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8/8 4.6 configs/s
+
+Generation 3: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━━━ 8/8 19.7 configs/s
+
+[25s] Generation 3 complete: 
+ok=9
+min=0.0308
+mid=0.0389
+max=0.0594
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [4],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 2,
+ 'num_warps': 2,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None]}
+[25s] Fitting surrogate: 28 points, 28 targets
+[25s] Generation 4 starting: 13 neighbors, 1 active search path(s)
+Generation 4: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13/13 4.8 configs/s
+
+Generation 4: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 13/13 18.3 configs/s
+
+[35s] Generation 4 complete: 
+ok=14
+min=0.0226
+mid=0.0368
+max=0.0492
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [8],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', 'first', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 4,
+ 'num_warps': 2,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, False],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None]}
+[35s] Fitting surrogate: 42 points, 42 targets
+[36s] Generation 5 starting: 16 neighbors, 1 active search path(s)
+Generation 5: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16/16 3.3 configs/s
+
+Generation 5: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 16/16 18.2 configs/s
+
+[48s] Generation 5 complete: 
+ok=17
+min=0.0226
+mid=0.0266
+max=0.0349
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [8],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', 'first', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 4,
+ 'num_warps': 2,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, False],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None]}
+[48s] Fitting surrogate: 59 points, 59 targets
+[48s] Autotuning complete in 48.6s after searching 54 configs.
+One can hardcode the best config and skip autotuning with:
+    @helion.kernel(config=helion.Config(advanced_controls_file='/opt/booster_pack/chunk_fwd_h_0.acf', block_sizes=[8], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', 'first', ''], loop_orders=[[0, 1]], num_stages=4, num_warps=2, pid_type='flat', range_flattens=[None, False], range_multi_buffers=[None, None], range_num_stages=[0, 0], range_unroll_factors=[0, 0], range_warp_specializes=[None, None]), static_shapes=True)
+
+[48s] Code of selected kernel: /tmp/torchinductor_ubuntu/ue/cuezqmbm4exgarcixbshrrloj5r2hqrdth4p7xgqen3hevfw6sa6.py
+  [DONE] Best config:
+    helion.Config(advanced_controls_file=_ACF, block_sizes=[8], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', 'first', ''], loop_orders=[[0, 1]], num_stages=4, num_warps=2, pid_type="flat", range_flattens=[None, False], range_multi_buffers=[None, None], range_num_stages=[0, 0], range_unroll_factors=[0, 0], range_warp_specializes=[None, None])
+
+[6] Autotuning shape (3, 1024, 4, 100, 100)...
+[0s] Autotune random seed: 4006308502
+[0s] Starting LFBOTreeSearch with initial_population=FROM_DEFAULT, copies=2, max_generations=5, similarity_penalty=1.0
+Initial population precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+Initial population exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[4s] Adaptive compile timeout: 30s (90% percentile=4.3s, bounds=[30.0s, 60s])
+[4s] Initial random population of 1, 1 starting points: 
+ok=1
+min=0.1065
+mid=0.1065
+max=0.1065
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [32],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None]}
+[4s] All labels are identical, skip training surrogate.
+[4s] Generation 1 starting: 10 neighbors, 1 active search path(s)
+Generation 1: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11/11 1.7 configs/s
+
+Generation 1: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 11/11 17.1 configs/s
+
+[17s] Generation 1 complete: 
+ok=12
+min=0.0676
+mid=0.2252
+max=5.3688
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [16],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 2,
+ 'num_warps': 16,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None]}
+[17s] Fitting surrogate: 13 points, 13 targets
+[17s] Generation 2 starting: 9 neighbors, 1 active search path(s)
+Generation 2: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9/9 4.3 configs/s
+
+Generation 2: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━━━ 9/9 16.8 configs/s
+
+[25s] Generation 2 complete: 
+ok=10
+min=0.0635
+mid=0.2436
+max=0.6011
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [8],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 2,
+ 'num_warps': 8,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 1],
+ 'range_unroll_factors': [0, 1],
+ 'range_warp_specializes': [None, None]}
+[25s] Fitting surrogate: 23 points, 23 targets
+[25s] Generation 3 starting: 14 neighbors, 1 active search path(s)
+Generation 3: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14/14 2.5 configs/s
+
+Generation 3: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 14/14 18.7 configs/s
+
+[37s] Generation 3 complete: 
+ok=15
+min=0.0513
+mid=0.0983
+max=0.2375
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [16],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', 'first'],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 2,
+ 'num_warps': 2,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 2],
+ 'range_warp_specializes': [None, None]}
+[37s] Fitting surrogate: 38 points, 38 targets
+[38s] Generation 4 starting: 15 neighbors, 1 active search path(s)
+[68s] Timeout after 30s compiling Config(advanced_controls_file='/opt/booster_pack/chunk_fwd_h_0.acf', block_sizes=[4], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['last', '', '', '', 'first'], loop_orders=[[0, 1]], num_stages=2, num_warps=1, pid_type='flat', range_flattens=[None, None], range_multi_buffers=[None, False], range_num_stages=[0, 0], range_unroll_factors=[0, 4], range_warp_specializes=[None, None])
+Generation 4: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16/16 0.7 configs/s
+
+Generation 4: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 16/16 23.5 configs/s
+
+[69s] Generation 4 complete: 
+error=3
+timeout=1
+ok=13
+min=0.0513
+mid=0.1003
+max=0.2468
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [16],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', 'first'],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 2,
+ 'num_warps': 2,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 2],
+ 'range_warp_specializes': [None, None]}
+[69s] Fitting surrogate: 55 points, 55 targets
+[69s] Generation 5 starting: 16 neighbors, 1 active search path(s)
+[100s] Timeout after 30s compiling Config(advanced_controls_file='/opt/booster_pack/chunk_fwd_h_0.acf', block_sizes=[32], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', 'last', '', 'first'], loop_orders=[[0, 1]], num_stages=2, num_warps=1, pid_type='flat', range_flattens=[None, None], range_multi_buffers=[None, None], range_num_stages=[0, 0], range_unroll_factors=[0, 3], range_warp_specializes=[None, None])
+[100s] Timeout after 30s compiling Config(advanced_controls_file='/opt/booster_pack/chunk_fwd_h_0.acf', block_sizes=[16], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', '', 'first'], loop_orders=[[0, 1]], num_stages=4, num_warps=2, pid_type='flat', range_flattens=[None, None], range_multi_buffers=[None, False], range_num_stages=[0, 0], range_unroll_factors=[0, 3], range_warp_specializes=[None, None])
+Generation 5: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16/16 0.7 configs/s
+
+Generation 5: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 16/16 49.2 configs/s
+
+[100s] Generation 5 complete: 
+error=7
+timeout=2
+ok=9
+min=0.0513
+mid=0.0553
+max=0.0920
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [16],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', 'first'],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 2,
+ 'num_warps': 2,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, False],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 2],
+ 'range_warp_specializes': [None, None]}
+[100s] Fitting surrogate: 73 points, 73 targets
+[100s] Autotuning complete in 100.9s after searching 54 configs.
+One can hardcode the best config and skip autotuning with:
+    @helion.kernel(config=helion.Config(advanced_controls_file='/opt/booster_pack/chunk_fwd_h_0.acf', block_sizes=[16], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', '', 'first'], loop_orders=[[0, 1]], num_stages=2, num_warps=2, pid_type='flat', range_flattens=[None, None], range_multi_buffers=[None, False], range_num_stages=[0, 0], range_unroll_factors=[0, 2], range_warp_specializes=[None, None]), static_shapes=True)
+
+[100s] Code of selected kernel: /tmp/torchinductor_ubuntu/v7/cv7qkeokvr52r3jyoacdjhdkxxensuodpfysxl7em3ucsqinfgzu.py
+  [DONE] Best config:
+    helion.Config(advanced_controls_file=_ACF, block_sizes=[16], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', '', 'first'], loop_orders=[[0, 1]], num_stages=2, num_warps=2, pid_type="flat", range_flattens=[None, None], range_multi_buffers=[None, False], range_num_stages=[0, 0], range_unroll_factors=[0, 2], range_warp_specializes=[None, None])
+
+[7] Autotuning shape (4, 1024, 4, 128, 128)...
+[0s] Autotune random seed: 4006409919
+[0s] Starting LFBOTreeSearch with initial_population=FROM_DEFAULT, copies=2, max_generations=5, similarity_penalty=1.0
+Initial population precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+Initial population exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[4s] Adaptive compile timeout: 30s (90% percentile=4.2s, bounds=[30.0s, 60s])
+[4s] Initial random population of 1, 1 starting points: 
+ok=1
+min=0.1106
+mid=0.1106
+max=0.1106
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [32],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None]}
+[4s] All labels are identical, skip training surrogate.
+[4s] Generation 1 starting: 9 neighbors, 1 active search path(s)
+[10s] Triton compile failed. This likely indicates a bug in Triton. Skipping failing config.
+Config: @helion.kernel(config=helion.Config(advanced_controls_file='/opt/booster_pack/chunk_fwd_h_0.acf', block_sizes=[16], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', '', ''], loop_orders=[[1, 0]], num_stages=1, num_warps=16, pid_type='flat', range_flattens=[None, None], range_multi_buffers=[None, None], range_num_stages=[0, 0], range_unroll_factors=[0, 0], range_warp_specializes=[None, True]), static_shapes=True)
+Error: RuntimeError: PassManager::run failed
+Enable HELION_AUTOTUNE_LOG_LEVEL=DEBUG to log generated Triton code.
+Remote traceback (spawned process):
+Traceback (most recent call last):
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 1971, in _run_kernel_in_subprocess_spawn
+    fn(*args)
+    ~~^^^^^^^
+  File "/tmp/torchinductor_ubuntu/hu/chu6riboljrznxittamudyxa3vbepiyocua6k23xlzeunmr5v67g.py", line 97, in kernel
+    _launcher(_helion_kernel, (triton.cdiv(128, _BLOCK_SIZE_1) * 16,), h_out, w, u, v_out, g, k, _source_module.LOG2_E, _RDIM_SIZE_3, num_warps=16, num_stages=1, ptx_options='--apply-controls /opt/booster_pack/chunk_fwd_h_0.acf')
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/runtime/__init__.py", line 123, in default_launcher
+    return triton_kernel.run(  # type: ignore[union-attr]
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        *args,
+        ^^^^^^
+        **run_kwargs,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/triton/runtime/jit.py", line 767, in run
+    kernel = self._do_compile(key, signature, device, constexprs, options, attrs, warmup)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/triton/runtime/jit.py", line 916, in _do_compile
+    kernel = self.compile(src, target=target, options=options.__dict__)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/triton/compiler/compiler.py", line 336, in compile
+    next_module = compile_ir(module, metadata)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/triton/backends/nvidia/compiler.py", line 551, in <lambda>
+    stages["ttgir"] = lambda src, metadata: self.make_ttgir(src, metadata, options, capability)
+                                            ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/triton/backends/nvidia/compiler.py", line 321, in make_ttgir
+    pm.run(mod, 'make_ttgir')
+    ~~~~~~^^^^^^^^^^^^^^^^^^^
+RuntimeError: PassManager::run failed
+
+Generation 1: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10/10 1.6 configs/s
+
+Generation 1: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 10/10 18.3 configs/s
+
+[16s] Generation 1 complete: 
+error=1
+ok=10
+min=0.0737
+mid=0.1741
+max=5.3361
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [16],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 1,
+ 'num_warps': 2,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 1],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None]}
+[16s] Fitting surrogate: 12 points, 12 targets
+[16s] Generation 2 starting: 10 neighbors, 1 active search path(s)
+Generation 2: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10/10 4.8 configs/s
+
+Generation 2: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 10/10 18.9 configs/s
+
+[25s] Generation 2 complete: 
+ok=11
+min=0.0636
+mid=0.1126
+max=1.0020
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [8],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer',
+              'tensor_descriptor'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 1,
+ 'num_warps': 8,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 1],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None]}
+[25s] Fitting surrogate: 23 points, 23 targets
+[25s] Generation 3 starting: 14 neighbors, 1 active search path(s)
+Generation 3: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14/14 3.9 configs/s
+
+Generation 3: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 14/14 18.6 configs/s
+
+[36s] Generation 3 complete: 
+ok=15
+min=0.0492
+mid=0.0963
+max=0.8192
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [8],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer',
+              'tensor_descriptor'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 2],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None]}
+[36s] Fitting surrogate: 38 points, 38 targets
+[36s] Generation 4 starting: 14 neighbors, 1 active search path(s)
+Generation 4: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14/14 2.5 configs/s
+
+Generation 4: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 14/14 20.6 configs/s
+
+[48s] Generation 4 complete: 
+error=1
+ok=14
+min=0.0492
+mid=0.0738
+max=0.1997
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [8],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer',
+              'tensor_descriptor'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 2],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None]}
+[48s] Fitting surrogate: 53 points, 53 targets
+[48s] Generation 5 starting: 14 neighbors, 1 active search path(s)
+Generation 5: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14/14 2.7 configs/s
+
+Generation 5: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 14/14 23.5 configs/s
+
+[60s] Generation 5 complete: 
+error=2
+ok=13
+min=0.0492
+mid=0.0738
+max=0.1598
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [8],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer',
+              'tensor_descriptor'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 2],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None]}
+[60s] Fitting surrogate: 68 points, 68 targets
+[60s] Autotuning complete in 60.3s after searching 59 configs.
+One can hardcode the best config and skip autotuning with:
+    @helion.kernel(config=helion.Config(advanced_controls_file='/opt/booster_pack/chunk_fwd_h_0.acf', block_sizes=[8], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'tensor_descriptor'], l2_groupings=[1], load_eviction_policies=['', '', '', '', ''], loop_orders=[[0, 1]], num_stages=1, num_warps=4, pid_type='flat', range_flattens=[None, None], range_multi_buffers=[None, None], range_num_stages=[0, 2], range_unroll_factors=[0, 0], range_warp_specializes=[None, None]), static_shapes=True)
+
+[60s] Code of selected kernel: /tmp/torchinductor_ubuntu/tl/ctl2x6dhi6r7r4opyrctmn64pxtdstvsnrcfq7jrj4p2d7qnwuvg.py
+  [DONE] Best config:
+    helion.Config(advanced_controls_file=_ACF, block_sizes=[8], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'tensor_descriptor'], l2_groupings=[1], load_eviction_policies=['', '', '', '', ''], loop_orders=[[0, 1]], num_stages=1, num_warps=4, pid_type="flat", range_flattens=[None, None], range_multi_buffers=[None, None], range_num_stages=[0, 2], range_unroll_factors=[0, 0], range_warp_specializes=[None, None])
+
+[8] Autotuning shape (2, 1536, 4, 128, 128)...
+[0s] Autotune random seed: 4006470923
+[0s] Starting LFBOTreeSearch with initial_population=FROM_DEFAULT, copies=2, max_generations=5, similarity_penalty=1.0
+Initial population precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+Initial population exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[4s] Adaptive compile timeout: 30s (90% percentile=4.3s, bounds=[30.0s, 60s])
+[4s] Initial random population of 1, 1 starting points: 
+ok=1
+min=0.1598
+mid=0.1598
+max=0.1598
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [32],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None]}
+[4s] All labels are identical, skip training surrogate.
+[4s] Generation 1 starting: 10 neighbors, 1 active search path(s)
+Generation 1: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11/11 3.9 configs/s
+
+Generation 1: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 11/11 18.3 configs/s
+
+[13s] Generation 1 complete: 
+ok=12
+min=0.0900
+mid=0.2560
+max=0.5796
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [8],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 1,
+ 'num_warps': 2,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 1],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None]}
+[13s] Fitting surrogate: 13 points, 13 targets
+[13s] Generation 2 starting: 8 neighbors, 1 active search path(s)
+Generation 2: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8/8 2.8 configs/s
+
+Generation 2: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━━━ 8/8 19.1 configs/s
+
+[21s] Generation 2 complete: 
+ok=9
+min=0.0900
+mid=0.1536
+max=0.5893
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [8],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 1,
+ 'num_warps': 2,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 1],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None]}
+[21s] Fitting surrogate: 22 points, 22 targets
+[22s] Generation 3 starting: 9 neighbors, 1 active search path(s)
+Generation 3: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9/9 3.8 configs/s
+
+Generation 3: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━━━ 9/9 19.6 configs/s
+
+[29s] Generation 3 complete: 
+ok=10
+min=0.0410
+mid=0.0900
+max=0.1475
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [8],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 3],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None]}
+[29s] Fitting surrogate: 32 points, 32 targets
+[30s] Generation 4 starting: 12 neighbors, 1 active search path(s)
+Generation 4: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12/12 2.0 configs/s
+
+Generation 4: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 12/12 23.1 configs/s
+
+[42s] Generation 4 complete: 
+error=2
+ok=11
+min=0.0410
+mid=0.0615
+max=0.0881
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [8],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer',
+              'tensor_descriptor'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['last', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 3],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None]}
+[42s] Fitting surrogate: 45 points, 45 targets
+[42s] Autotuning complete in 42.3s after searching 39 configs.
+One can hardcode the best config and skip autotuning with:
+    @helion.kernel(config=helion.Config(advanced_controls_file='/opt/booster_pack/chunk_fwd_h_0.acf', block_sizes=[8], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'tensor_descriptor'], l2_groupings=[1], load_eviction_policies=['last', '', '', '', ''], loop_orders=[[0, 1]], num_stages=1, num_warps=4, pid_type='flat', range_flattens=[None, None], range_multi_buffers=[None, None], range_num_stages=[0, 3], range_unroll_factors=[0, 0], range_warp_specializes=[None, None]), static_shapes=True)
+
+[42s] Code of selected kernel: /tmp/torchinductor_ubuntu/cr/ccrgsfn6xrybmwkokmzq5ka6vypzxvv7ayw5bi7sxdpfuoe3hn7p.py
+  [DONE] Best config:
+    helion.Config(advanced_controls_file=_ACF, block_sizes=[8], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'tensor_descriptor'], l2_groupings=[1], load_eviction_policies=['last', '', '', '', ''], loop_orders=[[0, 1]], num_stages=1, num_warps=4, pid_type="flat", range_flattens=[None, None], range_multi_buffers=[None, None], range_num_stages=[0, 3], range_unroll_factors=[0, 0], range_warp_specializes=[None, None])
+
+[9] Autotuning shape (4, 2048, 8, 64, 64)...
+[0s] Autotune random seed: 4006513716
+[0s] Starting LFBOTreeSearch with initial_population=FROM_DEFAULT, copies=2, max_generations=5, similarity_penalty=1.0
+Initial population precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+Initial population exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[4s] Adaptive compile timeout: 30s (90% percentile=4.3s, bounds=[30.0s, 60s])
+[4s] Initial random population of 1, 1 starting points: 
+ok=1
+min=0.1330
+mid=0.1330
+max=0.1330
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [32],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, None],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None]}
+[4s] All labels are identical, skip training surrogate.
+[4s] Generation 1 starting: 8 neighbors, 1 active search path(s)
+Generation 1: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9/9 6.7 configs/s
+
+Generation 1: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━━━ 9/9 19.2 configs/s
+
+[12s] Generation 1 complete: 
+ok=10
+min=0.0697
+mid=0.1313
+max=0.8377
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [8],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 2,
+ 'num_warps': 2,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, True],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None]}
+[12s] Fitting surrogate: 11 points, 11 targets
+[12s] Generation 2 starting: 9 neighbors, 1 active search path(s)
+Generation 2: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9/9 6.5 configs/s
+
+Generation 2: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━━━ 9/9 19.2 configs/s
+
+[20s] Generation 2 complete: 
+ok=10
+min=0.0697
+mid=0.1957
+max=0.4301
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [8],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 2,
+ 'num_warps': 2,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, True],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None]}
+[20s] Fitting surrogate: 21 points, 21 targets
+[20s] Generation 3 starting: 6 neighbors, 1 active search path(s)
+[25s] Triton compile failed. This likely indicates a bug in Triton. Skipping failing config.
+Config: @helion.kernel(config=helion.Config(advanced_controls_file='/opt/booster_pack/chunk_fwd_h_0.acf', block_sizes=[32], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', '', ''], loop_orders=[[0, 1]], maxnreg=32, num_sm_multiplier=1, num_stages=2, num_warps=4, pid_type='persistent_interleaved', range_flattens=[None, None], range_multi_buffers=[None, True], range_num_stages=[0, 0], range_unroll_factors=[0, 0], range_warp_specializes=[None, None]), static_shapes=True)
+Error: PTXASError: Internal Triton PTX codegen error
+`ptxas` stderr:
+ptxas-blackwell fatal   : (C7602) Insufficient registers (32) to compile instruction at line 239 in function _helion_kernel. Try to compile with register target of 34 or higher.
+ptxas-blackwell fatal   : Ptx assembly aborted due to errors
+
+Repro command: /home/ubuntu/helion_env/lib/python3.13/site-packages/triton/backends/nvidia/bin/ptxas-blackwell -lineinfo -v --regAllocOptLevel=2 --apply-controls /opt/booster_pack/chunk_fwd_h_0.acf --gpu-name=sm_100a /tmp/tmpysr4azej.ptx -o /tmp/tmpysr4azej.ptx.o
+
+Enable HELION_AUTOTUNE_LOG_LEVEL=DEBUG to log generated Triton code.
+Remote traceback (spawned process):
+Traceback (most recent call last):
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/triton/backends/nvidia/compiler.py", line 504, in make_cubin
+    subprocess.run(ptxas_cmd, check=True, close_fds=False, stderr=flog)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/home/ubuntu/helion_env/lib/python3.13/site-packages/triton/backends/nvidia/bin/ptxas-blackwell', '-lineinfo', '-v', '--regAllocOptLevel=2', '--apply-controls', '/opt/booster_pack/chunk_fwd_h_0.acf', '--gpu-name=sm_100a', '/tmp/tmpysr4azej.ptx', '-o', '/tmp/tmpysr4azej.ptx.o']' returned non-zero exit status 255.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 1971, in _run_kernel_in_subprocess_spawn
+    fn(*args)
+    ~~^^^^^^^
+  File "/tmp/torchinductor_ubuntu/vo/cvo342tv6vcp47z52o7ka72aufa4cxywfwvotejw3qlnyolgbbzm.py", line 104, in kernel
+    _launcher(_helion_kernel, (_NUM_SM,), h_out, w, u, v_out, g, k, _source_module.LOG2_E, _NUM_SM, _RDIM_SIZE_3, num_warps=4, num_stages=2, maxnreg=32, ptx_options='--apply-controls /opt/booster_pack/chunk_fwd_h_0.acf')
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/runtime/__init__.py", line 123, in default_launcher
+    return triton_kernel.run(  # type: ignore[union-attr]
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        *args,
+        ^^^^^^
+        **run_kwargs,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/triton/runtime/jit.py", line 767, in run
+    kernel = self._do_compile(key, signature, device, constexprs, options, attrs, warmup)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/triton/runtime/jit.py", line 916, in _do_compile
+    kernel = self.compile(src, target=target, options=options.__dict__)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/triton/compiler/compiler.py", line 336, in compile
+    next_module = compile_ir(module, metadata)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/triton/backends/nvidia/compiler.py", line 556, in <lambda>
+    stages["cubin"] = lambda src, metadata: self.make_cubin(src, metadata, options, self.target.arch)
+                                            ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/triton/backends/nvidia/compiler.py", line 539, in make_cubin
+    raise PTXASError(error)
+triton.runtime.errors.PTXASError: PTXAS error: Internal Triton PTX codegen error
+`ptxas` stderr:
+ptxas-blackwell fatal   : (C7602) Insufficient registers (32) to compile instruction at line 239 in function _helion_kernel. Try to compile with register target of 34 or higher.
+ptxas-blackwell fatal   : Ptx assembly aborted due to errors
+
+Repro command: /home/ubuntu/helion_env/lib/python3.13/site-packages/triton/backends/nvidia/bin/ptxas-blackwell -lineinfo -v --regAllocOptLevel=2 --apply-controls /opt/booster_pack/chunk_fwd_h_0.acf --gpu-name=sm_100a /tmp/tmpysr4azej.ptx -o /tmp/tmpysr4azej.ptx.o
+
+
+[25s] Triton compile failed. This likely indicates a bug in Triton. Skipping failing config.
+Config: @helion.kernel(config=helion.Config(advanced_controls_file='/opt/booster_pack/chunk_fwd_h_0.acf', block_sizes=[32], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', '', ''], loop_orders=[[0, 1]], maxnreg=32, num_sm_multiplier=1, num_stages=2, num_warps=4, pid_type='persistent_blocked', range_flattens=[None, None], range_multi_buffers=[None, True], range_num_stages=[0, 0], range_unroll_factors=[0, 0], range_warp_specializes=[None, None]), static_shapes=True)
+Error: PTXASError: Internal Triton PTX codegen error
+`ptxas` stderr:
+ptxas-blackwell fatal   : (C7602) Insufficient registers (32) to compile instruction at line 231 in function _helion_kernel. Try to compile with register target of 34 or higher.
+ptxas-blackwell fatal   : Ptx assembly aborted due to errors
+
+Repro command: /home/ubuntu/helion_env/lib/python3.13/site-packages/triton/backends/nvidia/bin/ptxas-blackwell -lineinfo -v --regAllocOptLevel=2 --apply-controls /opt/booster_pack/chunk_fwd_h_0.acf --gpu-name=sm_100a /tmp/tmp359ytmbw.ptx -o /tmp/tmp359ytmbw.ptx.o
+
+Enable HELION_AUTOTUNE_LOG_LEVEL=DEBUG to log generated Triton code.
+Remote traceback (spawned process):
+Traceback (most recent call last):
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/triton/backends/nvidia/compiler.py", line 504, in make_cubin
+    subprocess.run(ptxas_cmd, check=True, close_fds=False, stderr=flog)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/home/ubuntu/helion_env/lib/python3.13/site-packages/triton/backends/nvidia/bin/ptxas-blackwell', '-lineinfo', '-v', '--regAllocOptLevel=2', '--apply-controls', '/opt/booster_pack/chunk_fwd_h_0.acf', '--gpu-name=sm_100a', '/tmp/tmp359ytmbw.ptx', '-o', '/tmp/tmp359ytmbw.ptx.o']' returned non-zero exit status 255.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/autotuner/base_search.py", line 1971, in _run_kernel_in_subprocess_spawn
+    fn(*args)
+    ~~^^^^^^^
+  File "/tmp/torchinductor_ubuntu/4m/c4mgyafgpjtawi3wr2smrnherdv24ejfl6hzvh4qawf6yp54r4go.py", line 109, in kernel
+    _launcher(_helion_kernel, (_NUM_SM,), h_out, w, u, v_out, g, k, _source_module.LOG2_E, _NUM_SM, _RDIM_SIZE_3, num_warps=4, num_stages=2, maxnreg=32, ptx_options='--apply-controls /opt/booster_pack/chunk_fwd_h_0.acf')
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/helion/runtime/__init__.py", line 123, in default_launcher
+    return triton_kernel.run(  # type: ignore[union-attr]
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        *args,
+        ^^^^^^
+        **run_kwargs,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/triton/runtime/jit.py", line 767, in run
+    kernel = self._do_compile(key, signature, device, constexprs, options, attrs, warmup)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/triton/runtime/jit.py", line 916, in _do_compile
+    kernel = self.compile(src, target=target, options=options.__dict__)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/triton/compiler/compiler.py", line 336, in compile
+    next_module = compile_ir(module, metadata)
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/triton/backends/nvidia/compiler.py", line 556, in <lambda>
+    stages["cubin"] = lambda src, metadata: self.make_cubin(src, metadata, options, self.target.arch)
+                                            ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/helion_env/lib/python3.13/site-packages/triton/backends/nvidia/compiler.py", line 539, in make_cubin
+    raise PTXASError(error)
+triton.runtime.errors.PTXASError: PTXAS error: Internal Triton PTX codegen error
+`ptxas` stderr:
+ptxas-blackwell fatal   : (C7602) Insufficient registers (32) to compile instruction at line 231 in function _helion_kernel. Try to compile with register target of 34 or higher.
+ptxas-blackwell fatal   : Ptx assembly aborted due to errors
+
+Repro command: /home/ubuntu/helion_env/lib/python3.13/site-packages/triton/backends/nvidia/bin/ptxas-blackwell -lineinfo -v --regAllocOptLevel=2 --apply-controls /opt/booster_pack/chunk_fwd_h_0.acf --gpu-name=sm_100a /tmp/tmp359ytmbw.ptx -o /tmp/tmp359ytmbw.ptx.o
+
+
+Generation 3: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6/6 5.8 configs/s
+
+Generation 3: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━━━ 6/6 23.7 configs/s
+
+[26s] Generation 3 complete: 
+error=2
+ok=5
+min=0.0697
+mid=0.0778
+max=0.0840
+best={'advanced_controls_file': '/opt/booster_pack/chunk_fwd_h_0.acf',
+ 'block_sizes': [8],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', '', '', ''],
+ 'loop_orders': [[0, 1]],
+ 'num_stages': 2,
+ 'num_warps': 2,
+ 'pid_type': 'flat',
+ 'range_flattens': [None, None],
+ 'range_multi_buffers': [None, True],
+ 'range_num_stages': [0, 0],
+ 'range_unroll_factors': [0, 0],
+ 'range_warp_specializes': [None, None]}
+[26s] Fitting surrogate: 28 points, 28 targets
+[26s] Autotuning complete in 26.5s after searching 23 configs.
+One can hardcode the best config and skip autotuning with:
+    @helion.kernel(config=helion.Config(advanced_controls_file='/opt/booster_pack/chunk_fwd_h_0.acf', block_sizes=[8], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', '', ''], loop_orders=[[0, 1]], num_stages=2, num_warps=2, pid_type='flat', range_flattens=[None, None], range_multi_buffers=[None, True], range_num_stages=[0, 0], range_unroll_factors=[0, 0], range_warp_specializes=[None, None]), static_shapes=True)
+
+[26s] Code of selected kernel: /tmp/torchinductor_ubuntu/ez/cezkm2yfiuf7eb5d7pspc7w22jyrlxvrrvwkwo5cizjuhnx7gymq.py
+  [DONE] Best config:
+    helion.Config(advanced_controls_file=_ACF, block_sizes=[8], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', '', ''], loop_orders=[[0, 1]], num_stages=2, num_warps=2, pid_type="flat", range_flattens=[None, None], range_multi_buffers=[None, True], range_num_stages=[0, 0], range_unroll_factors=[0, 0], range_warp_specializes=[None, None])
+
+============================================================
+SHAPE_CONFIGS (paste into submission.py):
+============================================================
+    (1, 64, 2, 64, 64): helion.Config(advanced_controls_file=_ACF, block_sizes=[16], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', '', ''], loop_orders=[[0, 1]], num_stages=1, num_warps=16, pid_type="flat", range_flattens=[None, False], range_multi_buffers=[None, None], range_num_stages=[0, 0], range_unroll_factors=[0, 0], range_warp_specializes=[None, None], static_ranges=[False]),
+    (2, 128, 4, 64, 64): helion.Config(advanced_controls_file=_ACF, block_sizes=[8], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', '', ''], loop_orders=[[1, 0]], num_stages=2, num_warps=2, pid_type="flat", range_flattens=[None, None], range_multi_buffers=[None, None], range_num_stages=[0, 0], range_unroll_factors=[0, 0], range_warp_specializes=[None, None], static_ranges=[False]),
+    (1, 256, 4, 64, 128): helion.Config(advanced_controls_file=_ACF, block_sizes=[8], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['first', '', 'last', '', ''], loop_orders=[[0, 1]], num_stages=4, num_warps=4, pid_type="flat", range_flattens=[None, None], range_multi_buffers=[None, None], range_num_stages=[0, 0], range_unroll_factors=[0, 0], range_warp_specializes=[None, None], static_ranges=[False]),
+    (1, 64, 1, 64, 64): helion.Config(advanced_controls_file=_ACF, block_sizes=[8], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', '', ''], loop_orders=[[0, 1]], num_stages=1, num_warps=8, pid_type="flat", range_flattens=[None, None], range_multi_buffers=[None, None], range_num_stages=[0, 1], range_unroll_factors=[0, 0], range_warp_specializes=[None, None], static_ranges=[False]),
+    (2, 512, 3, 64, 64): helion.Config(advanced_controls_file=_ACF, block_sizes=[8], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'tensor_descriptor', 'pointer'], l2_groupings=[1], load_eviction_policies=['', 'last', '', '', ''], loop_orders=[[0, 1]], num_sm_multiplier=4, num_stages=1, num_warps=4, pid_type="persistent_blocked", range_flattens=[None, False], range_multi_buffers=[None, None], range_num_stages=[0, 4], range_unroll_factors=[0, 0], range_warp_specializes=[None, None], static_ranges=[False]),
+    (2, 1024, 3, 64, 64): helion.Config(advanced_controls_file=_ACF, block_sizes=[8], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', 'first', ''], loop_orders=[[0, 1]], num_stages=4, num_warps=2, pid_type="flat", range_flattens=[None, False], range_multi_buffers=[None, None], range_num_stages=[0, 0], range_unroll_factors=[0, 0], range_warp_specializes=[None, None]),
+    (3, 1024, 4, 100, 100): helion.Config(advanced_controls_file=_ACF, block_sizes=[16], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', '', 'first'], loop_orders=[[0, 1]], num_stages=2, num_warps=2, pid_type="flat", range_flattens=[None, None], range_multi_buffers=[None, False], range_num_stages=[0, 0], range_unroll_factors=[0, 2], range_warp_specializes=[None, None]),
+    (4, 1024, 4, 128, 128): helion.Config(advanced_controls_file=_ACF, block_sizes=[8], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'tensor_descriptor'], l2_groupings=[1], load_eviction_policies=['', '', '', '', ''], loop_orders=[[0, 1]], num_stages=1, num_warps=4, pid_type="flat", range_flattens=[None, None], range_multi_buffers=[None, None], range_num_stages=[0, 2], range_unroll_factors=[0, 0], range_warp_specializes=[None, None]),
+    (2, 1536, 4, 128, 128): helion.Config(advanced_controls_file=_ACF, block_sizes=[8], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'tensor_descriptor'], l2_groupings=[1], load_eviction_policies=['last', '', '', '', ''], loop_orders=[[0, 1]], num_stages=1, num_warps=4, pid_type="flat", range_flattens=[None, None], range_multi_buffers=[None, None], range_num_stages=[0, 3], range_unroll_factors=[0, 0], range_warp_specializes=[None, None]),
+    (4, 2048, 8, 64, 64): helion.Config(advanced_controls_file=_ACF, block_sizes=[8], indexing=['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', '', '', ''], loop_orders=[[0, 1]], num_stages=2, num_warps=2, pid_type="flat", range_flattens=[None, None], range_multi_buffers=[None, True], range_num_stages=[0, 0], range_unroll_factors=[0, 0], range_warp_specializes=[None, None]),
