@@ -35,7 +35,7 @@ def _get_acf_path():
 _ACF = _get_acf_path()
 
 # Shapes that need ieee for leaderboard stability (TF32 causes ~0.002 mismatch)
-SHAPES_USE_IEEE = {(2, 128, 4, 64, 64)}
+SHAPES_USE_IEEE = {(1, 64, 2, 64, 64), (2, 128, 4, 64, 64), (1, 256, 4, 64, 128)}
 
 # Per-shape configs: ACF + num_warps=16 gives best results
 SHAPE_CONFIGS: dict[tuple, helion.Config] = {
