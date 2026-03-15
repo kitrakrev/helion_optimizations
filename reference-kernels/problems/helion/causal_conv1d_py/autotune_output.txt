@@ -119,3 +119,359 @@ best={'block_sizes': [2, 16, 16],
  'range_warp_specializes': []}
 [4s] All labels are identical, skip training surrogate.
 [4s] Generation 1 starting: 9 neighbors, 1 active search path(s)
+Generation 1: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10/10 1.1 configs/s
+
+[30s] Skipping config with accuracy mismatch: helion.Config(block_sizes=[1, 16, 16], indexing=['pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', ''], loop_orders=[[0, 1, 2]], num_ctas=1, num_stages=10, num_warps=4, occupancy=1, pid_type='flat', range_flattens=[], range_multi_buffers=[], range_num_stages=[], range_unroll_factors=[], range_warp_specializes=[])
+Tensor-likes are not close!
+
+Mismatched elements: 16260 / 32768 (49.6%)
+Greatest absolute difference: 17.362743377685547 at index (1, 121, 69) (up to 0.01 allowed)
+Greatest relative difference: 9732.9150390625 at index (1, 90, 63) (up to 0.01 allowed)
+Use HELION_AUTOTUNE_ACCURACY_CHECK=0 to disable this check.
+
+[30s] Skipping config with accuracy mismatch: helion.Config(block_sizes=[1, 16, 16], indexing=['pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', ''], loop_orders=[[0, 1, 2]], num_ctas=1, num_stages=6, num_warps=4, occupancy=1, pid_type='flat', range_flattens=[], range_multi_buffers=[], range_num_stages=[], range_unroll_factors=[], range_warp_specializes=[])
+Tensor-likes are not close!
+
+Mismatched elements: 16260 / 32768 (49.6%)
+Greatest absolute difference: 17.362743377685547 at index (1, 121, 69) (up to 0.01 allowed)
+Greatest relative difference: 9732.9150390625 at index (1, 90, 63) (up to 0.01 allowed)
+Use HELION_AUTOTUNE_ACCURACY_CHECK=0 to disable this check.
+
+[30s] Skipping config with accuracy mismatch: helion.Config(block_sizes=[1, 16, 16], indexing=['pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[2], load_eviction_policies=['', '', ''], loop_orders=[[0, 1, 2]], num_ctas=1, num_stages=1, num_warps=4, occupancy=1, pid_type='flat', range_flattens=[], range_multi_buffers=[], range_num_stages=[], range_unroll_factors=[], range_warp_specializes=[])
+Tensor-likes are not close!
+
+Mismatched elements: 16260 / 32768 (49.6%)
+Greatest absolute difference: 17.362743377685547 at index (1, 121, 69) (up to 0.01 allowed)
+Greatest relative difference: 9732.9150390625 at index (1, 90, 63) (up to 0.01 allowed)
+Use HELION_AUTOTUNE_ACCURACY_CHECK=0 to disable this check.
+
+[30s] Skipping config with accuracy mismatch: helion.Config(block_sizes=[1, 16, 8], indexing=['pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', ''], loop_orders=[[0, 1, 2]], num_ctas=1, num_stages=8, num_warps=4, occupancy=1, pid_type='flat', range_flattens=[], range_multi_buffers=[], range_num_stages=[], range_unroll_factors=[], range_warp_specializes=[])
+Tensor-likes are not close!
+
+Mismatched elements: 16260 / 32768 (49.6%)
+Greatest absolute difference: 17.362743377685547 at index (1, 121, 69) (up to 0.01 allowed)
+Greatest relative difference: 9732.9150390625 at index (1, 90, 63) (up to 0.01 allowed)
+Use HELION_AUTOTUNE_ACCURACY_CHECK=0 to disable this check.
+
+[30s] Skipping config with accuracy mismatch: helion.Config(block_sizes=[1, 32, 16], indexing=['pointer', 'pointer', 'tensor_descriptor', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', ''], loop_orders=[[0, 1, 2]], num_ctas=1, num_stages=1, num_warps=4, occupancy=1, pid_type='flat', range_flattens=[], range_multi_buffers=[], range_num_stages=[], range_unroll_factors=[], range_warp_specializes=[])
+Tensor-likes are not close!
+
+Mismatched elements: 16260 / 32768 (49.6%)
+Greatest absolute difference: 17.362743377685547 at index (1, 121, 69) (up to 0.01 allowed)
+Greatest relative difference: 9732.9150390625 at index (1, 90, 63) (up to 0.01 allowed)
+Use HELION_AUTOTUNE_ACCURACY_CHECK=0 to disable this check.
+
+Generation 1: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 10/10 26.7 configs/s
+
+[30s] Generation 1 complete: 
+error=5
+ok=6
+min=0.0061
+mid=0.0061
+max=0.0061
+best={'block_sizes': [2, 16, 16],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', ''],
+ 'loop_orders': [[0, 1, 2]],
+ 'num_ctas': 1,
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'occupancy': 1,
+ 'pid_type': 'flat',
+ 'range_flattens': [],
+ 'range_multi_buffers': [],
+ 'range_num_stages': [],
+ 'range_unroll_factors': [],
+ 'range_warp_specializes': []}
+[30s] Fitting surrogate: 12 points, 12 targets
+[30s] Generation 2 starting: 7 neighbors, 1 active search path(s)
+Generation 2: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8/8 5.1 configs/s
+
+Generation 2: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━━━ 8/8 19.7 configs/s
+
+[49s] Generation 2 complete: 
+ok=9
+min=0.0061
+mid=0.0061
+max=0.0061
+best={'block_sizes': [2, 16, 16],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', ''],
+ 'loop_orders': [[0, 1, 2]],
+ 'num_ctas': 1,
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'occupancy': 1,
+ 'pid_type': 'flat',
+ 'range_flattens': [],
+ 'range_multi_buffers': [],
+ 'range_num_stages': [],
+ 'range_unroll_factors': [],
+ 'range_warp_specializes': []}
+[49s] Fitting surrogate: 21 points, 21 targets
+[49s] Autotuning complete in 49.4s after searching 19 configs.
+One can hardcode the best config and skip autotuning with:
+    @helion.kernel(config=helion.Config(block_sizes=[2, 16, 16], indexing=['pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', ''], loop_orders=[[0, 1, 2]], num_ctas=1, num_stages=1, num_warps=4, occupancy=1, pid_type='flat', range_flattens=[], range_multi_buffers=[], range_num_stages=[], range_unroll_factors=[], range_warp_specializes=[]), static_shapes=True)
+
+[49s] Code of selected kernel: /tmp/torchinductor_ubuntu/yq/cyqw5xewxba3kgkcujsk7natxakhra3hu6wsqlstshn2hdr4ckis.py
+  [DONE] helion.Config(block_sizes=[2, 16, 16], num_warps=4, num_stages=1)
+
+[2] Autotuning shape (1, 256, 256, 3)...
+[0s] Autotune random seed: 4007394253
+[0s] Starting LFBOTreeSearch with initial_population=FROM_DEFAULT, copies=2, max_generations=5, similarity_penalty=1.0
+Initial population precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+Initial population exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[4s] Adaptive compile timeout: 30s (90% percentile=4.8s, bounds=[30.0s, 60s])
+[4s] Initial random population of 1, 1 starting points: 
+ok=1
+min=0.0061
+mid=0.0061
+max=0.0061
+best={'block_sizes': [1, 16, 16],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', ''],
+ 'loop_orders': [[0, 1, 2]],
+ 'num_ctas': 1,
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'occupancy': 1,
+ 'pid_type': 'flat',
+ 'range_flattens': [],
+ 'range_multi_buffers': [],
+ 'range_num_stages': [],
+ 'range_unroll_factors': [],
+ 'range_warp_specializes': []}
+[4s] All labels are identical, skip training surrogate.
+[4s] Generation 1 starting: 8 neighbors, 1 active search path(s)
+Generation 1: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9/9 3.8 configs/s
+
+Generation 1: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━━━ 9/9 18.7 configs/s
+
+[18s] Generation 1 complete: 
+ok=10
+min=0.0061
+mid=0.0061
+max=0.0082
+best={'block_sizes': [1, 16, 16],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', ''],
+ 'loop_orders': [[0, 1, 2]],
+ 'num_ctas': 1,
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'occupancy': 1,
+ 'pid_type': 'flat',
+ 'range_flattens': [],
+ 'range_multi_buffers': [],
+ 'range_num_stages': [],
+ 'range_unroll_factors': [],
+ 'range_warp_specializes': []}
+[18s] Fitting surrogate: 11 points, 11 targets
+[19s] Generation 2 starting: 10 neighbors, 1 active search path(s)
+Generation 2: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10/10 1.0 configs/s
+
+Generation 2: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 10/10 15.3 configs/s
+
+[45s] Generation 2 complete: 
+ok=12
+min=0.0061
+mid=0.0281
+max=0.0289
+best={'block_sizes': [1, 16, 16],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', ''],
+ 'loop_orders': [[0, 1, 2]],
+ 'num_ctas': 1,
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'occupancy': 1,
+ 'pid_type': 'flat',
+ 'range_flattens': [],
+ 'range_multi_buffers': [],
+ 'range_num_stages': [],
+ 'range_unroll_factors': [],
+ 'range_warp_specializes': []}
+[45s] Fitting surrogate: 23 points, 23 targets
+[45s] Autotuning complete in 45.9s after searching 20 configs.
+One can hardcode the best config and skip autotuning with:
+    @helion.kernel(config=helion.Config(block_sizes=[1, 16, 16], indexing=['pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', ''], loop_orders=[[0, 1, 2]], num_ctas=1, num_stages=1, num_warps=4, occupancy=1, pid_type='flat', range_flattens=[], range_multi_buffers=[], range_num_stages=[], range_unroll_factors=[], range_warp_specializes=[]), static_shapes=True)
+
+[45s] Code of selected kernel: /tmp/torchinductor_ubuntu/3j/c3jxqhnx44xjcrvko4jwlsmlgn3u7mj5afrnzttmzum4og6c4c7y.py
+  [DONE] helion.Config(block_sizes=[1, 16, 16], num_warps=4, num_stages=1)
+
+[3] Autotuning shape (1, 128, 64, 8)...
+[0s] Autotune random seed: 4007440536
+[0s] Starting LFBOTreeSearch with initial_population=FROM_DEFAULT, copies=2, max_generations=5, similarity_penalty=1.0
+Initial population precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+Initial population exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 1/1 - configs/s
+
+[9s] Adaptive compile timeout: 30s (90% percentile=9.9s, bounds=[30.0s, 60s])
+[9s] Initial random population of 1, 1 starting points: 
+ok=1
+min=0.0141
+mid=0.0141
+max=0.0141
+best={'block_sizes': [1, 16, 16],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', ''],
+ 'loop_orders': [[0, 1, 2]],
+ 'num_ctas': 1,
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'occupancy': 1,
+ 'pid_type': 'flat',
+ 'range_flattens': [],
+ 'range_multi_buffers': [],
+ 'range_num_stages': [],
+ 'range_unroll_factors': [],
+ 'range_warp_specializes': []}
+[9s] All labels are identical, skip training surrogate.
+[10s] Generation 1 starting: 8 neighbors, 1 active search path(s)
+Generation 1: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9/9 2.5 configs/s
+
+Generation 1: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━━━ 9/9 19.5 configs/s
+
+[24s] Generation 1 complete: 
+ok=10
+min=0.0061
+mid=0.0061
+max=0.0141
+best={'block_sizes': [1, 8, 16],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', ''],
+ 'loop_orders': [[0, 1, 2]],
+ 'num_ctas': 2,
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'occupancy': 1,
+ 'pid_type': 'flat',
+ 'range_flattens': [],
+ 'range_multi_buffers': [],
+ 'range_num_stages': [],
+ 'range_unroll_factors': [],
+ 'range_warp_specializes': []}
+[24s] Fitting surrogate: 11 points, 11 targets
+[25s] Generation 2 starting: 7 neighbors, 1 active search path(s)
+Generation 2: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8/8 2.7 configs/s
+
+Generation 2: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━━━ 8/8 15.3 configs/s
+
+[39s] Generation 2 complete: 
+ok=9
+min=0.0061
+mid=0.0231
+max=0.0268
+best={'block_sizes': [1, 8, 16],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', ''],
+ 'loop_orders': [[0, 1, 2]],
+ 'num_ctas': 2,
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'occupancy': 1,
+ 'pid_type': 'flat',
+ 'range_flattens': [],
+ 'range_multi_buffers': [],
+ 'range_num_stages': [],
+ 'range_unroll_factors': [],
+ 'range_warp_specializes': []}
+[39s] Fitting surrogate: 20 points, 20 targets
+[40s] Generation 3 starting: 11 neighbors, 1 active search path(s)
+Generation 3: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12/12 7.8 configs/s
+
+Generation 3: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 12/12 18.7 configs/s
+
+[69s] Generation 3 complete: 
+ok=13
+min=0.0061
+mid=0.0061
+max=0.0072
+best={'block_sizes': [1, 8, 16],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', ''],
+ 'loop_orders': [[0, 1, 2]],
+ 'num_ctas': 2,
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'occupancy': 1,
+ 'pid_type': 'flat',
+ 'range_flattens': [],
+ 'range_multi_buffers': [],
+ 'range_num_stages': [],
+ 'range_unroll_factors': [],
+ 'range_warp_specializes': []}
+[69s] Fitting surrogate: 33 points, 33 targets
+[69s] Generation 4 starting: 16 neighbors, 1 active search path(s)
+Generation 4: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16/16 4.7 configs/s
+
+Generation 4: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 16/16 18.2 configs/s
+
+[93s] Generation 4 complete: 
+ok=18
+min=0.0061
+mid=0.0061
+max=0.0061
+best={'block_sizes': [1, 8, 16],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', ''],
+ 'loop_orders': [[0, 1, 2]],
+ 'num_ctas': 2,
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'occupancy': 1,
+ 'pid_type': 'flat',
+ 'range_flattens': [],
+ 'range_multi_buffers': [],
+ 'range_num_stages': [],
+ 'range_unroll_factors': [],
+ 'range_warp_specializes': []}
+[93s] Fitting surrogate: 51 points, 51 targets
+[94s] Generation 5 starting: 14 neighbors, 1 active search path(s)
+Generation 5: precompiling 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14/14 1.6 configs/s
+
+Generation 5: exploring neighbors 100% ━━━━━━━━━━━━━━━━━━━━ 14/14 17.6 configs/s
+
+[119s] Generation 5 complete: 
+ok=16
+min=0.0061
+mid=0.0061
+max=0.0065
+best={'block_sizes': [1, 8, 16],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', ''],
+ 'loop_orders': [[0, 1, 2]],
+ 'num_ctas': 2,
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'occupancy': 1,
+ 'pid_type': 'flat',
+ 'range_flattens': [],
+ 'range_multi_buffers': [],
+ 'range_num_stages': [],
+ 'range_unroll_factors': [],
+ 'range_warp_specializes': []}
+[119s] Fitting surrogate: 67 points, 67 targets
+[119s] Autotuning complete in 119.9s after searching 60 configs.
+One can hardcode the best config and skip autotuning with:
+    @helion.kernel(config=helion.Config(block_sizes=[1, 8, 16], indexing=['pointer', 'pointer', 'pointer', 'pointer'], l2_groupings=[1], load_eviction_policies=['', '', ''], loop_orders=[[0, 1, 2]], num_ctas=2, num_stages=1, num_warps=4, occupancy=1, pid_type='flat', range_flattens=[], range_multi_buffers=[], range_num_stages=[], range_unroll_factors=[], range_warp_specializes=[]), static_shapes=True)
+
+[119s] Code of selected kernel: /tmp/torchinductor_ubuntu/o6/co6mibettogo5du5huuxa4lcgw27xucfc72eplooqnymmggztbmq.py
+  [DONE] helion.Config(block_sizes=[1, 8, 16], num_warps=4, num_stages=1)
+
+[4] Autotuning shape (4, 64, 128, 4)...
+[0s] Autotune random seed: 4007560849
+[0s] Starting LFBOTreeSearch with initial_population=FROM_DEFAULT, copies=2, max_generations=5, similarity_penalty=1.0
