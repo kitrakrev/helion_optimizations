@@ -17,16 +17,17 @@ LOG2_E = 1.4426950408889634
 # Test shapes: ieee for stability; benchmarks: tf32 for speed
 SHAPES_USE_IEEE = {(1, 64, 2, 64, 64), (2, 128, 4, 64, 64), (1, 256, 4, 64, 128)}
 
+# num_warps=8 for K/V=128 (larger blocks)
 SHAPE_CONFIGS = {
     (1, 64, 2, 64, 64): helion.Config(block_sizes=[], num_warps=4, num_stages=2),
     (2, 128, 4, 64, 64): helion.Config(block_sizes=[], num_warps=4, num_stages=2),
-    (1, 256, 4, 64, 128): helion.Config(block_sizes=[], num_warps=4, num_stages=2),
+    (1, 256, 4, 64, 128): helion.Config(block_sizes=[], num_warps=8, num_stages=2),
     (1, 64, 1, 64, 64): helion.Config(block_sizes=[], num_warps=4, num_stages=2),
     (2, 512, 3, 64, 64): helion.Config(block_sizes=[], num_warps=4, num_stages=2),
     (2, 1024, 3, 64, 64): helion.Config(block_sizes=[], num_warps=4, num_stages=2),
     (3, 1024, 4, 100, 100): helion.Config(block_sizes=[], num_warps=4, num_stages=2),
-    (4, 1024, 4, 128, 128): helion.Config(block_sizes=[], num_warps=4, num_stages=2),
-    (2, 1536, 4, 128, 128): helion.Config(block_sizes=[], num_warps=4, num_stages=2),
+    (4, 1024, 4, 128, 128): helion.Config(block_sizes=[], num_warps=8, num_stages=2),
+    (2, 1536, 4, 128, 128): helion.Config(block_sizes=[], num_warps=8, num_stages=2),
     (4, 2048, 8, 64, 64): helion.Config(block_sizes=[], num_warps=4, num_stages=2),
 }
 
