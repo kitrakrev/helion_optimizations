@@ -1,6 +1,7 @@
 #!POPCORN leaderboard gated_deltanet_chunk_fwd_o
 #!POPCORN gpu B200_Nebius
 
+# TF32 + exp2 for B200. Use torch.where for causal to avoid inf*0=NaN on leaderboard.
 from task import input_t, output_t
 
 import base64
@@ -10,6 +11,8 @@ from pathlib import Path
 import torch
 import helion
 import helion.language as hl
+
+LOG2_E = 1.4426950408889634
 
 # Embedded ACF (base64-encoded /opt/booster_pack/chunk_fwd_o_2.acf)
 _ACF_B64 = "dxWiJeYWsl07kkfpP9XX/H8eAH47Ex9AMGrP2GEhPXmylnaxRuyhm7Jm92wfWuRrfhC4Z2c/nyCEuHMPqnKzLfxLYEUwAoRJly4PDJ1N9tsFdoEly63K6Uu64ywKrhZQlmzJkOKxGBpmJLTFgfHzZNkEwb+7JCXzy4HimxgDZAol2iyuihI0A8X0qwqkikZjQa/w0NwGO62O9dFE+eSIh9mNlj9zBa+C2Cb0M5CX20nMpXdk7Huexg=="
@@ -49,7 +52,7 @@ SHAPE_CONFIGS: dict[tuple, helion.Config] = {
 
 
 def _make_kernel(config: helion.Config):
-    @helion.kernel(static_shapes=True, dot_precision="ieee", config=config)
+    @helion.kernel(static_shapes=True, dot_precision="tf32", config=config)
     def kernel(
         q: torch.Tensor,     # [B, T, H, K]
         k: torch.Tensor,     # [B, T, H, K]
@@ -72,23 +75,20 @@ def _make_kernel(config: helion.Config):
             h_idx = flat_bh.begin % H
             c_idx = tile_t.begin // C
 
-            g_c = g[b_idx, tile_t, h_idx].to(torch.float32)
-            q_c = q[b_idx, tile_t, h_idx, :].to(torch.float32)
-            k_c = k[b_idx, tile_t, h_idx, :].to(torch.float32)
-            v_c = v[b_idx, tile_t, h_idx, :].to(torch.float32)
-            h_c = h[b_idx, c_idx, h_idx, :, :].to(torch.float32)
+            g_c = g[b_idx, tile_t, h_idx]
+            q_c = q[b_idx, tile_t, h_idx, :]
+            k_c = k[b_idx, tile_t, h_idx, :]
+            v_c = v[b_idx, tile_t, h_idx, :]
+            h_c = h[b_idx, c_idx, h_idx, :, :]
 
-            # Inter-chunk: (q @ h) * exp(g)
-            o_inter = hl.dot(q_c, h_c, out_dtype=torch.float32) * torch.exp(g_c)[:, None]
-
-            # Intra-chunk: causal(q @ k^T * exp(g_i - g_j)) @ v
+            o_inter = hl.dot(q_c, h_c, out_dtype=torch.float32) * torch.exp2(g_c * LOG2_E)[:, None]
             qk = hl.dot(q_c, k_c.T, out_dtype=torch.float32)
             g_diff = g_c[:, None] - g_c[None, :]
-            qk = qk * torch.exp(g_diff)
-            # Causal mask (must match reference: inf*0=NaN in masked positions)
+            qk = qk * torch.exp2(g_diff * LOG2_E)
+            # Use where() to avoid inf*0=NaN (leaderboard B200 fails with qk*causal)
             idx = hl.arange(tile_t.block_size)
-            causal = (idx[:, None] >= idx[None, :]).to(torch.float32)
-            qk = qk * causal
+            causal = (idx[:, None] >= idx[None, :])
+            qk = torch.where(causal, qk, 0.0)
             o_intra = hl.dot(qk, v_c, out_dtype=torch.float32)
 
             out[b_idx, tile_t, h_idx, :] = ((o_inter + o_intra) * scale).to(out.dtype)
