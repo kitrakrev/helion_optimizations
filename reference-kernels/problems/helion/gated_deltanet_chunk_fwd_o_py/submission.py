@@ -34,6 +34,9 @@ def _get_acf_path():
 
 _ACF = _get_acf_path()
 
+# Shapes that need ieee for leaderboard stability (TF32 causes ~0.002 mismatch)
+SHAPES_USE_IEEE = {(2, 128, 4, 64, 64)}
+
 # Per-shape configs: ACF + num_warps=16 gives best results
 SHAPE_CONFIGS: dict[tuple, helion.Config] = {
     # Test shapes
@@ -51,8 +54,8 @@ SHAPE_CONFIGS: dict[tuple, helion.Config] = {
 }
 
 
-def _make_kernel(config: helion.Config):
-    @helion.kernel(static_shapes=True, dot_precision="tf32", config=config)
+def _make_kernel(config: helion.Config, dot_precision: str = "tf32"):
+    @helion.kernel(static_shapes=True, dot_precision=dot_precision, config=config)
     def kernel(
         q: torch.Tensor,     # [B, T, H, K]
         k: torch.Tensor,     # [B, T, H, K]
@@ -98,7 +101,10 @@ def _make_kernel(config: helion.Config):
     return kernel
 
 
-_KERNELS = {shape: _make_kernel(cfg) for shape, cfg in SHAPE_CONFIGS.items()}
+_KERNELS = {
+    shape: _make_kernel(cfg, "ieee" if shape in SHAPES_USE_IEEE else "tf32")
+    for shape, cfg in SHAPE_CONFIGS.items()
+}
 
 
 def custom_kernel(data: input_t) -> output_t:
