@@ -88,10 +88,10 @@ def _make_kernel(config: helion.Config, dot_precision: str = "tf32"):
             qk = hl.dot(q_c, k_c.T, out_dtype=torch.float32)
             g_diff = g_c[:, None] - g_c[None, :]
             qk = qk * torch.exp2(g_diff * LOG2_E)
-            # Use where() to avoid inf*0=NaN (leaderboard B200 fails with qk*causal)
+            # Causal mask: must match reference NaN pattern (inf*0=NaN for ieee)
             idx = hl.arange(tile_t.block_size)
-            causal = (idx[:, None] >= idx[None, :])
-            qk = torch.where(causal, qk, 0.0)
+            causal = (idx[:, None] >= idx[None, :]).to(torch.float32)
+            qk = qk * causal
             o_intra = hl.dot(qk, v_c, out_dtype=torch.float32)
 
             out[b_idx, tile_t, h_idx, :] = ((o_inter + o_intra) * scale).to(out.dtype)
